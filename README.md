@@ -26,6 +26,7 @@ Technology
 Attributions
 =============
 
+- Some UI control icons created by Matt Ball, released under Creative Commons, see his enclosed license & README.
 - Matthew Fahrenbacher wrote an earlier incarnation of this app, titled "Perfect Score", in the 2003.
 
 License
