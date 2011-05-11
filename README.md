@@ -26,6 +26,7 @@ Technology
 Attributions
 =============
 
+- The app and documents icons are spawned from [Christian Baroni's](http://christianbaroni.me/) [Day 98 work at 356psd](http://365psd.com/day/98/).
 - Some UI control icons created by Matt Ball, released under Creative Commons, see his enclosed license & README.
 - Matthew Fahrenbacher wrote an earlier incarnation of this app, titled "Perfect Score", in the 2003.
 
