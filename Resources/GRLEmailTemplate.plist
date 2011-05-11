@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AttendanceEventMessage</key>
+	<string>This is an automated email message from &lt;insert name&gt; at &lt;insert school name&gt;:
+In &lt;insert class name&gt;, %S was %A at least %D times between the dates of %B and %E.  If you would like to discuss this report with me personally, please feel free to email, call, or come by my office hours to discuss.
+
+Sincerely,
+
+&lt;insert name&gt;
+&lt;insert email address&gt;
+&lt;insert work phone number&gt;
+Office Hours: &lt;insert office hours&gt;</string>
+	<key>AssignmentEventMessage</key>
+	<string>This is an automated email message from &lt;insert name&gt; at &lt;insert school name&gt;:
+In &lt;insert class name&gt;, %S was missing at least %D assignments between the dates of %B and %E.  If you would like to discuss this report with me personally, please feel free to email, call, or come by my office hours to discuss.
+
+Sincerely,
+
+&lt;insert name&gt;
+&lt;insert email address&gt;
+&lt;insert work phone number&gt;
+Office Hours: &lt;insert office hours&gt;</string>
+	<key>GradeEventMessage</key>
+	<string>This is an automated email message from &lt;insert name&gt; at &lt;insert school name&gt;:
+In &lt;insert class name&gt;, %S had an overall grade of %A %D% between the dates of %B and %E.  If you would like to discuss this report with me personally, please feel free to email, call, or come by my office hours to discuss.
+
+Sincerely,
+
+&lt;insert name&gt;
+&lt;insert email address&gt;
+&lt;insert work phone number&gt;
+Office Hours: &lt;insert office hours&gt;</string>
+</dict>
+</plist>

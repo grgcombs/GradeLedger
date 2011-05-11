@@ -1,0 +1,5 @@
+I seriously want to try to integrate Matthew Ball's MBTableGrid as the spreadsheet engine.  The main thing I'd like to see on this front is vertical text headers like I've got, and make them clickable, as in the attendance checker.  Barring that, we could just engineer some friendliness between his spreadsheet and an auxilliary header/tableview like we do now.
+
+I can also see using Matt Gemmell's MAAttachedWindow to point out particular things to do in a scripted tutorial, or upon erroneous taps with a description of the problem.
+
+Finally, Josh Abernathy has a pretty swanky JAListView ... I can see using that in a few places too.

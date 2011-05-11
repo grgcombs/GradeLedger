@@ -1,0 +1,1299 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3716404D13774D610018A23A /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3716404B13774D610018A23A /* JSONKit.h */; };
+		3716404E13774D610018A23A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3716404C13774D610018A23A /* JSONKit.m */; };
+		37819570137A286B004B852E /* User's Guide.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3781956F137A286B004B852E /* User's Guide.rtf */; };
+		37819573137A2907004B852E /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 37819571137A2907004B852E /* Read Me.rtf */; };
+		378636991379D50800427C1B /* RowResizableOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636141379D50800427C1B /* RowResizableOutlineView.h */; };
+		3786369A1379D50800427C1B /* RowResizableOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636151379D50800427C1B /* RowResizableOutlineView.m */; };
+		3786369B1379D50800427C1B /* RowResizableTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636161379D50800427C1B /* RowResizableTableView.h */; };
+		3786369C1379D50800427C1B /* RowResizableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636171379D50800427C1B /* RowResizableTableView.m */; };
+		3786369D1379D50800427C1B /* RowResizableViewImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636181379D50800427C1B /* RowResizableViewImplementation.h */; };
+		3786369E1379D50800427C1B /* RowResizableViewMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636191379D50800427C1B /* RowResizableViewMethods.h */; };
+		3786369F1379D50800427C1B /* RowResizableViewVars.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786361A1379D50800427C1B /* RowResizableViewVars.h */; };
+		378636A01379D50800427C1B /* GRLHelpManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786361B1379D50800427C1B /* GRLHelpManager.h */; };
+		378636A11379D50800427C1B /* GRLHelpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786361C1379D50800427C1B /* GRLHelpManager.m */; };
+		378636A21379D50800427C1B /* GRLPasswordProtect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786361D1379D50800427C1B /* GRLPasswordProtect.h */; };
+		378636A31379D50800427C1B /* GRLPasswordProtect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786361E1379D50800427C1B /* GRLPasswordProtect.m */; };
+		378636A41379D50800427C1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636201379D50800427C1B /* main.m */; };
+		378636A51379D50800427C1B /* GradeLedger_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 378636211379D50800427C1B /* GradeLedger_Prefix.pch */; };
+		378636A61379D50800427C1B /* GRLDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636221379D50800427C1B /* GRLDefines.h */; };
+		378636A71379D50800427C1B /* GRLDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636241379D50800427C1B /* GRLDatabase.h */; };
+		378636A81379D50800427C1B /* GRLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636251379D50800427C1B /* GRLDatabase.m */; };
+		378636A91379D50800427C1B /* GRLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636261379D50800427C1B /* GRLDocument.h */; };
+		378636AA1379D50800427C1B /* GRLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636271379D50800427C1B /* GRLDocument.m */; };
+		378636AB1379D50800427C1B /* GRLDocumentController.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636281379D50800427C1B /* GRLDocumentController.h */; };
+		378636AC1379D50800427C1B /* GRLDocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636291379D50800427C1B /* GRLDocumentController.m */; };
+		378636AD1379D50800427C1B /* AssignmentObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786362B1379D50800427C1B /* AssignmentObj.h */; };
+		378636AE1379D50800427C1B /* AssignmentObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786362C1379D50800427C1B /* AssignmentObj.m */; };
+		378636AF1379D50800427C1B /* AttendanceForDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786362D1379D50800427C1B /* AttendanceForDate.h */; };
+		378636B01379D50800427C1B /* AttendanceForDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786362E1379D50800427C1B /* AttendanceForDate.m */; };
+		378636B11379D50800427C1B /* CategoryObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786362F1379D50800427C1B /* CategoryObj.h */; };
+		378636B21379D50800427C1B /* CategoryObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636301379D50800427C1B /* CategoryObj.m */; };
+		378636B31379D50800427C1B /* DocPrefParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636311379D50800427C1B /* DocPrefParameter.h */; };
+		378636B41379D50800427C1B /* DocPrefParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636321379D50800427C1B /* DocPrefParameter.m */; };
+		378636B51379D50800427C1B /* DocumentPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636331379D50800427C1B /* DocumentPreferences.h */; };
+		378636B61379D50800427C1B /* DocumentPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636341379D50800427C1B /* DocumentPreferences.m */; };
+		378636B71379D50800427C1B /* NotesObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636351379D50800427C1B /* NotesObj.h */; };
+		378636B81379D50800427C1B /* NotesObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636361379D50800427C1B /* NotesObj.m */; };
+		378636B91379D50800427C1B /* ScoreObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636371379D50800427C1B /* ScoreObj.h */; };
+		378636BA1379D50800427C1B /* ScoreObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636381379D50800427C1B /* ScoreObj.m */; };
+		378636BB1379D50800427C1B /* StudentAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636391379D50800427C1B /* StudentAttributes.h */; };
+		378636BC1379D50800427C1B /* StudentAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786363A1379D50800427C1B /* StudentAttributes.m */; };
+		378636BD1379D50800427C1B /* StudentObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786363B1379D50800427C1B /* StudentObj.h */; };
+		378636BE1379D50800427C1B /* StudentObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786363C1379D50800427C1B /* StudentObj.m */; };
+		378636BF1379D50800427C1B /* GRLAttendanceCodeEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786363F1379D50800427C1B /* GRLAttendanceCodeEvent.h */; };
+		378636C01379D50800427C1B /* GRLAttendanceCodeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636401379D50800427C1B /* GRLAttendanceCodeEvent.m */; };
+		378636C11379D50800427C1B /* GRLEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636411379D50800427C1B /* GRLEvent.h */; };
+		378636C21379D50800427C1B /* GRLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636421379D50800427C1B /* GRLEvent.m */; };
+		378636C31379D50800427C1B /* GRLMissingAssignmentEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636431379D50800427C1B /* GRLMissingAssignmentEvent.h */; };
+		378636C41379D50800427C1B /* GRLMissingAssignmentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636441379D50800427C1B /* GRLMissingAssignmentEvent.m */; };
+		378636C51379D50800427C1B /* GRLNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636451379D50800427C1B /* GRLNotification.h */; };
+		378636C61379D50800427C1B /* GRLNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636461379D50800427C1B /* GRLNotification.m */; };
+		378636C71379D50800427C1B /* GRLNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636471379D50800427C1B /* GRLNotificationManager.h */; };
+		378636C81379D50800427C1B /* GRLNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636481379D50800427C1B /* GRLNotificationManager.m */; };
+		378636C91379D50800427C1B /* GRLScoreEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636491379D50800427C1B /* GRLScoreEvent.h */; };
+		378636CA1379D50800427C1B /* GRLScoreEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786364A1379D50800427C1B /* GRLScoreEvent.m */; };
+		378636CB1379D50800427C1B /* GRLStatController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786364B1379D50800427C1B /* GRLStatController.h */; };
+		378636CC1379D50800427C1B /* GRLStatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786364C1379D50800427C1B /* GRLStatController.m */; };
+		378636CD1379D50800427C1B /* GRLStudentEmailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786364D1379D50800427C1B /* GRLStudentEmailer.h */; };
+		378636CE1379D50800427C1B /* GRLStudentEmailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786364E1379D50800427C1B /* GRLStudentEmailer.m */; };
+		378636CF1379D50800427C1B /* GRLAttendanceExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636501379D50800427C1B /* GRLAttendanceExporter.h */; };
+		378636D01379D50800427C1B /* GRLAttendanceExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636511379D50800427C1B /* GRLAttendanceExporter.m */; };
+		378636D11379D50800427C1B /* GRLAttendancePrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636521379D50800427C1B /* GRLAttendancePrinter.h */; };
+		378636D21379D50800427C1B /* GRLAttendancePrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636531379D50800427C1B /* GRLAttendancePrinter.m */; };
+		378636D31379D50800427C1B /* GRLDrawObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636541379D50800427C1B /* GRLDrawObject.h */; };
+		378636D41379D50800427C1B /* GRLDrawObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636551379D50800427C1B /* GRLDrawObject.m */; };
+		378636D51379D50800427C1B /* GRLExporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636561379D50800427C1B /* GRLExporter.h */; };
+		378636D61379D50800427C1B /* GRLExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636571379D50800427C1B /* GRLExporter.m */; };
+		378636D71379D50800427C1B /* GRLGrayBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636581379D50800427C1B /* GRLGrayBox.h */; };
+		378636D81379D50800427C1B /* GRLGrayBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636591379D50800427C1B /* GRLGrayBox.m */; };
+		378636D91379D50800427C1B /* GRLPathObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786365A1379D50800427C1B /* GRLPathObject.h */; };
+		378636DA1379D50800427C1B /* GRLPathObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786365B1379D50800427C1B /* GRLPathObject.m */; };
+		378636DB1379D50800427C1B /* GRLPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786365C1379D50800427C1B /* GRLPrinter.h */; };
+		378636DC1379D50800427C1B /* GRLPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786365D1379D50800427C1B /* GRLPrinter.m */; };
+		378636DD1379D50800427C1B /* GRLPrintHeaderController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786365E1379D50800427C1B /* GRLPrintHeaderController.h */; };
+		378636DE1379D50800427C1B /* GRLPrintHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786365F1379D50800427C1B /* GRLPrintHeaderController.m */; };
+		378636DF1379D50800427C1B /* GRLRotatedTextObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636601379D50800427C1B /* GRLRotatedTextObject.h */; };
+		378636E01379D50800427C1B /* GRLRotatedTextObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636611379D50800427C1B /* GRLRotatedTextObject.m */; };
+		378636E11379D50800427C1B /* GRLTextObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636621379D50800427C1B /* GRLTextObject.h */; };
+		378636E21379D50800427C1B /* GRLTextObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636631379D50800427C1B /* GRLTextObject.m */; };
+		378636E31379D50800427C1B /* GRLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636641379D50800427C1B /* GRLTextView.h */; };
+		378636E41379D50800427C1B /* GRLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636651379D50800427C1B /* GRLTextView.m */; };
+		378636E51379D50800427C1B /* calcu.c in Sources */ = {isa = PBXBuildFile; fileRef = 378636671379D50800427C1B /* calcu.c */; };
+		378636E71379D50800427C1B /* DateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636691379D50800427C1B /* DateUtils.h */; };
+		378636E81379D50800427C1B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366A1379D50800427C1B /* DateUtils.m */; };
+		378636E91379D50800427C1B /* NSColor-Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786366B1379D50800427C1B /* NSColor-Additions.h */; };
+		378636EA1379D50800427C1B /* NSColor-Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366C1379D50800427C1B /* NSColor-Additions.m */; };
+		378636EB1379D50800427C1B /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786366D1379D50800427C1B /* NSData+Base64.h */; };
+		378636EC1379D50800427C1B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366E1379D50800427C1B /* NSData+Base64.m */; };
+		378636ED1379D50800427C1B /* NSDate+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786366F1379D50800427C1B /* NSDate+Helper.h */; };
+		378636EE1379D50800427C1B /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636701379D50800427C1B /* NSDate+Helper.m */; };
+		378636EF1379D50800427C1B /* NSManagedObjectContext+EZFetch.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636711379D50800427C1B /* NSManagedObjectContext+EZFetch.h */; };
+		378636F01379D50800427C1B /* NSManagedObjectContext+EZFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636721379D50800427C1B /* NSManagedObjectContext+EZFetch.m */; };
+		378636F11379D50800427C1B /* GRLFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636731379D50800427C1B /* GRLFunction.h */; };
+		378636F21379D50800427C1B /* GRLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636741379D50800427C1B /* GRLFunction.m */; };
+		378636F31379D50800427C1B /* GRLZeroer.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636751379D50800427C1B /* GRLZeroer.h */; };
+		378636F41379D50800427C1B /* GRLZeroer.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636761379D50800427C1B /* GRLZeroer.m */; };
+		378636F51379D50800427C1B /* DateHeaderController.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636791379D50800427C1B /* DateHeaderController.h */; };
+		378636F61379D50800427C1B /* DateHeaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786367A1379D50800427C1B /* DateHeaderController.m */; };
+		378636F71379D50800427C1B /* GRLAttendanceDS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786367B1379D50800427C1B /* GRLAttendanceDS.h */; };
+		378636F81379D50800427C1B /* GRLAttendanceDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786367C1379D50800427C1B /* GRLAttendanceDS.m */; };
+		378636FB1379D50800427C1B /* PhotoRosterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786367F1379D50800427C1B /* PhotoRosterController.h */; };
+		378636FC1379D50800427C1B /* PhotoRosterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636801379D50800427C1B /* PhotoRosterController.m */; };
+		378636FD1379D50800427C1B /* LetterGradeLookup.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636821379D50800427C1B /* LetterGradeLookup.h */; };
+		378636FE1379D50800427C1B /* LetterGradeLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636831379D50800427C1B /* LetterGradeLookup.m */; };
+		378636FF1379D50800427C1B /* GRLScoreDS.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636841379D50800427C1B /* GRLScoreDS.h */; };
+		378637001379D50800427C1B /* GRLScoreDS.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636851379D50800427C1B /* GRLScoreDS.m */; };
+		378637011379D50800427C1B /* ScoreHeaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636861379D50800427C1B /* ScoreHeaderViewController.h */; };
+		378637021379D50800427C1B /* ScoreHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636871379D50800427C1B /* ScoreHeaderViewController.m */; };
+		378637031379D50800427C1B /* HeaderScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636891379D50800427C1B /* HeaderScrollView.h */; };
+		378637041379D50800427C1B /* HeaderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786368A1379D50800427C1B /* HeaderScrollView.m */; };
+		378637051379D50800427C1B /* GRLNameTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786368B1379D50800427C1B /* GRLNameTableView.h */; };
+		378637081379D50800427C1B /* GRLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786368E1379D50800427C1B /* GRLScrollView.m */; };
+		378637091379D50800427C1B /* SpreadsheetDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786368F1379D50800427C1B /* SpreadsheetDataSource.h */; };
+		3786370A1379D50800427C1B /* SpreadsheetDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636901379D50800427C1B /* SpreadsheetDataSource.m */; };
+		3786370B1379D50800427C1B /* SpreadsheetFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636911379D50800427C1B /* SpreadsheetFieldCell.h */; };
+		3786370C1379D50800427C1B /* SpreadsheetFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636921379D50800427C1B /* SpreadsheetFieldCell.m */; };
+		3786370D1379D50800427C1B /* SpreadsheetFieldEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636931379D50800427C1B /* SpreadsheetFieldEditor.h */; };
+		3786370E1379D50800427C1B /* SpreadsheetFieldEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636941379D50800427C1B /* SpreadsheetFieldEditor.m */; };
+		3786370F1379D50800427C1B /* SpreadsheetTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636951379D50800427C1B /* SpreadsheetTableView.h */; };
+		378637101379D50800427C1B /* SpreadsheetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636961379D50800427C1B /* SpreadsheetTableView.m */; };
+		378637111379D50800427C1B /* VerticalTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636971379D50800427C1B /* VerticalTextCell.h */; };
+		378637121379D50800427C1B /* VerticalTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636981379D50800427C1B /* VerticalTextCell.m */; };
+		3786371C1379D58500427C1B /* DocumentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 378637141379D58500427C1B /* DocumentModel.xcdatamodeld */; };
+		378638311379D65200427C1B /* Add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637D91379D65100427C1B /* Add.tiff */; };
+		378638321379D65200427C1B /* AddSmall.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DA1379D65100427C1B /* AddSmall.tiff */; };
+		378638331379D65200427C1B /* Blue Ball.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DB1379D65100427C1B /* Blue Ball.tiff */; };
+		378638341379D65200427C1B /* Brushed Window.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DC1379D65100427C1B /* Brushed Window.tiff */; };
+		378638351379D65200427C1B /* Burn.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DD1379D65100427C1B /* Burn.tiff */; };
+		378638361379D65200427C1B /* button_action.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DE1379D65100427C1B /* button_action.tiff */; };
+		378638371379D65200427C1B /* button_add.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637DF1379D65100427C1B /* button_add.tiff */; };
+		378638381379D65200427C1B /* button_bar_handle.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E01379D65100427C1B /* button_bar_handle.tiff */; };
+		378638391379D65200427C1B /* button_bar_spacer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E11379D65100427C1B /* button_bar_spacer.tiff */; };
+		3786383A1379D65200427C1B /* button_clear.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E21379D65100427C1B /* button_clear.tiff */; };
+		3786383B1379D65200427C1B /* button_duplicate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E31379D65100427C1B /* button_duplicate.tiff */; };
+		3786383C1379D65200427C1B /* button_edit.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E41379D65100427C1B /* button_edit.tiff */; };
+		3786383D1379D65200427C1B /* button_edit_mode.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E51379D65100427C1B /* button_edit_mode.tiff */; };
+		3786383E1379D65200427C1B /* button_edit_mode_selected.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E61379D65100427C1B /* button_edit_mode_selected.tiff */; };
+		3786383F1379D65200427C1B /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 378637E71379D65100427C1B /* button_left.png */; };
+		378638401379D65200427C1B /* button_pagination.png in Resources */ = {isa = PBXBuildFile; fileRef = 378637E81379D65100427C1B /* button_pagination.png */; };
+		378638411379D65200427C1B /* button_refresh.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637E91379D65100427C1B /* button_refresh.tiff */; };
+		378638421379D65200427C1B /* button_remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637EA1379D65100427C1B /* button_remove.tiff */; };
+		378638431379D65200427C1B /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 378637EB1379D65100427C1B /* button_right.png */; };
+		378638441379D65200427C1B /* colors.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637EC1379D65100427C1B /* colors.tiff */; };
+		378638451379D65200427C1B /* Dashboard.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637ED1379D65100427C1B /* Dashboard.tiff */; };
+		378638461379D65200427C1B /* Database.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637EE1379D65100427C1B /* Database.tiff */; };
+		378638471379D65200427C1B /* Delete.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637EF1379D65100427C1B /* Delete.tiff */; };
+		378638481379D65200427C1B /* Disc.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F01379D65100427C1B /* Disc.tiff */; };
+		378638491379D65200427C1B /* Drawer-List.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F11379D65100427C1B /* Drawer-List.tiff */; };
+		3786384A1379D65200427C1B /* Drawer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F21379D65100427C1B /* Drawer.tiff */; };
+		3786384B1379D65200427C1B /* Duplicate.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F31379D65100427C1B /* Duplicate.tiff */; };
+		3786384C1379D65200427C1B /* Eject.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F41379D65100427C1B /* Eject.tiff */; };
+		3786384D1379D65200427C1B /* Emoticon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F51379D65100427C1B /* Emoticon.tiff */; };
+		3786384E1379D65200427C1B /* flag.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F61379D65100427C1B /* flag.tiff */; };
+		3786384F1379D65200427C1B /* Folder.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F71379D65100427C1B /* Folder.tiff */; };
+		378638501379D65200427C1B /* General Preferences.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F81379D65100427C1B /* General Preferences.tiff */; };
+		378638511379D65200427C1B /* Get Info.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637F91379D65100427C1B /* Get Info.tiff */; };
+		378638521379D65200427C1B /* Green Ball.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FA1379D65100427C1B /* Green Ball.tiff */; };
+		378638531379D65200427C1B /* Help.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FB1379D65100427C1B /* Help.tiff */; };
+		378638541379D65200427C1B /* History.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FC1379D65100427C1B /* History.tiff */; };
+		378638551379D65200427C1B /* HUD.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FD1379D65100427C1B /* HUD.tiff */; };
+		378638561379D65200427C1B /* Linkback Green 2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FE1379D65100427C1B /* Linkback Green 2.tiff */; };
+		378638571379D65200427C1B /* Linkback Green.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378637FF1379D65100427C1B /* Linkback Green.tiff */; };
+		378638581379D65200427C1B /* LinkBack.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638001379D65100427C1B /* LinkBack.tiff */; };
+		378638591379D65200427C1B /* minus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 378638011379D65100427C1B /* minus-8.png */; };
+		3786385A1379D65200427C1B /* Movies.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638021379D65100427C1B /* Movies.tiff */; };
+		3786385B1379D65200427C1B /* Network Utility.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638031379D65100427C1B /* Network Utility.tiff */; };
+		3786385C1379D65200427C1B /* Orange Ball.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638041379D65100427C1B /* Orange Ball.tiff */; };
+		3786385D1379D65200427C1B /* Pause.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638051379D65100427C1B /* Pause.tiff */; };
+		3786385E1379D65200427C1B /* Play.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638061379D65100427C1B /* Play.tiff */; };
+		3786385F1379D65200427C1B /* plus-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 378638071379D65100427C1B /* plus-8.png */; };
+		378638601379D65200427C1B /* Power.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638081379D65100427C1B /* Power.tiff */; };
+		378638611379D65200427C1B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 378638091379D65100427C1B /* README.txt */; };
+		378638621379D65200427C1B /* Record.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380A1379D65100427C1B /* Record.tiff */; };
+		378638631379D65200427C1B /* Red Ball.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380B1379D65100427C1B /* Red Ball.tiff */; };
+		378638641379D65200427C1B /* reload.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380C1379D65100427C1B /* reload.tiff */; };
+		378638651379D65200427C1B /* Remove.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380D1379D65100427C1B /* Remove.tiff */; };
+		378638661379D65200427C1B /* RemoveSmall.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380E1379D65100427C1B /* RemoveSmall.tiff */; };
+		378638671379D65200427C1B /* RSS 2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 3786380F1379D65100427C1B /* RSS 2.tiff */; };
+		378638681379D65200427C1B /* RSS.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638101379D65100427C1B /* RSS.tiff */; };
+		378638691379D65200427C1B /* Smart Folder.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638111379D65100427C1B /* Smart Folder.tiff */; };
+		3786386A1379D65200427C1B /* SnapBack.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638121379D65100427C1B /* SnapBack.tiff */; };
+		3786386B1379D65200427C1B /* Spotlight.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638131379D65100427C1B /* Spotlight.tiff */; };
+		3786386C1379D65200427C1B /* Sticky.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638141379D65100427C1B /* Sticky.tiff */; };
+		3786386D1379D65200427C1B /* Stop.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638151379D65100427C1B /* Stop.tiff */; };
+		3786386E1379D65200427C1B /* Terminal.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638161379D65100427C1B /* Terminal.tiff */; };
+		3786386F1379D65200427C1B /* Universal Binary.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638171379D65100427C1B /* Universal Binary.tiff */; };
+		378638701379D65200427C1B /* Users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638181379D65100427C1B /* Users.tiff */; };
+		378638711379D65200427C1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378638191379D65100427C1B /* InfoPlist.strings */; };
+		378638721379D65200427C1B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3786381B1379D65100427C1B /* MainMenu.nib */; };
+		378638731379D65200427C1B /* GRLDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3786381D1379D65100427C1B /* GRLDocument.nib */; };
+		378638741379D65200427C1B /* GradeLedger-Doc.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378638201379D65100427C1B /* GradeLedger-Doc.icns */; };
+		378638751379D65200427C1B /* GradeLedger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378638211379D65100427C1B /* GradeLedger.icns */; };
+		378638841379D65200427C1B /* GRLEmailTemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378638301379D65100427C1B /* GRLEmailTemplate.plist */; };
+		378A147D11566CB700D57443 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378A147C11566CB700D57443 /* ScriptingBridge.framework */; };
+		378A15DC11568A4D00D57443 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = 378A15DB11568A4D00D57443 /* Mail.app */; };
+		378A15E111568A9500D57443 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = 378A15DB11568A4D00D57443 /* Mail.app */; };
+		37B5408811515F23009D2939 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		37C58382116B74FA004B96AD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C58381116B74FA004B96AD /* CoreData.framework */; };
+		37D8BCBF1379EF9E00C5C48E /* GRLScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D8BCBE1379EF9E00C5C48E /* GRLScrollView.h */; };
+		37D8BCC11379F01E00C5C48E /* GRLNameTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8BCC01379F01E00C5C48E /* GRLNameTableView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		378A15D2115689C100D57443 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		3763EE0F1354FB28000E524C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37E721481169336C008EE2CD /* TexLege.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37735C101323104A0033F343;
+			remoteInfo = "TexLege (Seeding DB)";
+		};
+		37E721661169338B008EE2CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37E721481169336C008EE2CD /* TexLege.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = TexLege;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3716404B13774D610018A23A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		3716404C13774D610018A23A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		3781956F137A286B004B852E /* User's Guide.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "User's Guide.rtf"; path = "English.lproj/User's Guide.rtf"; sourceTree = "<group>"; };
+		37819572137A2907004B852E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		378636141379D50800427C1B /* RowResizableOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableOutlineView.h; sourceTree = "<group>"; };
+		378636151379D50800427C1B /* RowResizableOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowResizableOutlineView.m; sourceTree = "<group>"; };
+		378636161379D50800427C1B /* RowResizableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableTableView.h; sourceTree = "<group>"; };
+		378636171379D50800427C1B /* RowResizableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowResizableTableView.m; sourceTree = "<group>"; };
+		378636181379D50800427C1B /* RowResizableViewImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableViewImplementation.h; sourceTree = "<group>"; };
+		378636191379D50800427C1B /* RowResizableViewMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableViewMethods.h; sourceTree = "<group>"; };
+		3786361A1379D50800427C1B /* RowResizableViewVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableViewVars.h; sourceTree = "<group>"; };
+		3786361B1379D50800427C1B /* GRLHelpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLHelpManager.h; sourceTree = "<group>"; };
+		3786361C1379D50800427C1B /* GRLHelpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLHelpManager.m; sourceTree = "<group>"; };
+		3786361D1379D50800427C1B /* GRLPasswordProtect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLPasswordProtect.h; sourceTree = "<group>"; };
+		3786361E1379D50800427C1B /* GRLPasswordProtect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLPasswordProtect.m; sourceTree = "<group>"; };
+		378636201379D50800427C1B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		378636211379D50800427C1B /* GradeLedger_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradeLedger_Prefix.pch; path = ../../GradeLedger_Prefix.pch; sourceTree = "<group>"; };
+		378636221379D50800427C1B /* GRLDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLDefines.h; sourceTree = "<group>"; };
+		378636241379D50800427C1B /* GRLDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLDatabase.h; sourceTree = "<group>"; };
+		378636251379D50800427C1B /* GRLDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLDatabase.m; sourceTree = "<group>"; };
+		378636261379D50800427C1B /* GRLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLDocument.h; sourceTree = "<group>"; };
+		378636271379D50800427C1B /* GRLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLDocument.m; sourceTree = "<group>"; };
+		378636281379D50800427C1B /* GRLDocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLDocumentController.h; sourceTree = "<group>"; };
+		378636291379D50800427C1B /* GRLDocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLDocumentController.m; sourceTree = "<group>"; };
+		3786362B1379D50800427C1B /* AssignmentObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentObj.h; sourceTree = "<group>"; };
+		3786362C1379D50800427C1B /* AssignmentObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentObj.m; sourceTree = "<group>"; };
+		3786362D1379D50800427C1B /* AttendanceForDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceForDate.h; sourceTree = "<group>"; };
+		3786362E1379D50800427C1B /* AttendanceForDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceForDate.m; sourceTree = "<group>"; };
+		3786362F1379D50800427C1B /* CategoryObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryObj.h; sourceTree = "<group>"; };
+		378636301379D50800427C1B /* CategoryObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryObj.m; sourceTree = "<group>"; };
+		378636311379D50800427C1B /* DocPrefParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocPrefParameter.h; sourceTree = "<group>"; };
+		378636321379D50800427C1B /* DocPrefParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocPrefParameter.m; sourceTree = "<group>"; };
+		378636331379D50800427C1B /* DocumentPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentPreferences.h; sourceTree = "<group>"; };
+		378636341379D50800427C1B /* DocumentPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentPreferences.m; sourceTree = "<group>"; };
+		378636351379D50800427C1B /* NotesObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesObj.h; sourceTree = "<group>"; };
+		378636361379D50800427C1B /* NotesObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesObj.m; sourceTree = "<group>"; };
+		378636371379D50800427C1B /* ScoreObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreObj.h; sourceTree = "<group>"; };
+		378636381379D50800427C1B /* ScoreObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreObj.m; sourceTree = "<group>"; };
+		378636391379D50800427C1B /* StudentAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentAttributes.h; sourceTree = "<group>"; };
+		3786363A1379D50800427C1B /* StudentAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentAttributes.m; sourceTree = "<group>"; };
+		3786363B1379D50800427C1B /* StudentObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentObj.h; sourceTree = "<group>"; };
+		3786363C1379D50800427C1B /* StudentObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentObj.m; sourceTree = "<group>"; };
+		3786363F1379D50800427C1B /* GRLAttendanceCodeEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLAttendanceCodeEvent.h; sourceTree = "<group>"; };
+		378636401379D50800427C1B /* GRLAttendanceCodeEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLAttendanceCodeEvent.m; sourceTree = "<group>"; };
+		378636411379D50800427C1B /* GRLEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLEvent.h; sourceTree = "<group>"; };
+		378636421379D50800427C1B /* GRLEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLEvent.m; sourceTree = "<group>"; };
+		378636431379D50800427C1B /* GRLMissingAssignmentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLMissingAssignmentEvent.h; sourceTree = "<group>"; };
+		378636441379D50800427C1B /* GRLMissingAssignmentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLMissingAssignmentEvent.m; sourceTree = "<group>"; };
+		378636451379D50800427C1B /* GRLNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLNotification.h; sourceTree = "<group>"; };
+		378636461379D50800427C1B /* GRLNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLNotification.m; sourceTree = "<group>"; };
+		378636471379D50800427C1B /* GRLNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLNotificationManager.h; sourceTree = "<group>"; };
+		378636481379D50800427C1B /* GRLNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLNotificationManager.m; sourceTree = "<group>"; };
+		378636491379D50800427C1B /* GRLScoreEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLScoreEvent.h; sourceTree = "<group>"; };
+		3786364A1379D50800427C1B /* GRLScoreEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLScoreEvent.m; sourceTree = "<group>"; };
+		3786364B1379D50800427C1B /* GRLStatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLStatController.h; sourceTree = "<group>"; };
+		3786364C1379D50800427C1B /* GRLStatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLStatController.m; sourceTree = "<group>"; };
+		3786364D1379D50800427C1B /* GRLStudentEmailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLStudentEmailer.h; sourceTree = "<group>"; };
+		3786364E1379D50800427C1B /* GRLStudentEmailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLStudentEmailer.m; sourceTree = "<group>"; };
+		378636501379D50800427C1B /* GRLAttendanceExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLAttendanceExporter.h; sourceTree = "<group>"; };
+		378636511379D50800427C1B /* GRLAttendanceExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLAttendanceExporter.m; sourceTree = "<group>"; };
+		378636521379D50800427C1B /* GRLAttendancePrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLAttendancePrinter.h; sourceTree = "<group>"; };
+		378636531379D50800427C1B /* GRLAttendancePrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLAttendancePrinter.m; sourceTree = "<group>"; };
+		378636541379D50800427C1B /* GRLDrawObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLDrawObject.h; sourceTree = "<group>"; };
+		378636551379D50800427C1B /* GRLDrawObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLDrawObject.m; sourceTree = "<group>"; };
+		378636561379D50800427C1B /* GRLExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLExporter.h; sourceTree = "<group>"; };
+		378636571379D50800427C1B /* GRLExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLExporter.m; sourceTree = "<group>"; };
+		378636581379D50800427C1B /* GRLGrayBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLGrayBox.h; sourceTree = "<group>"; };
+		378636591379D50800427C1B /* GRLGrayBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLGrayBox.m; sourceTree = "<group>"; };
+		3786365A1379D50800427C1B /* GRLPathObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLPathObject.h; sourceTree = "<group>"; };
+		3786365B1379D50800427C1B /* GRLPathObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLPathObject.m; sourceTree = "<group>"; };
+		3786365C1379D50800427C1B /* GRLPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLPrinter.h; sourceTree = "<group>"; };
+		3786365D1379D50800427C1B /* GRLPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLPrinter.m; sourceTree = "<group>"; };
+		3786365E1379D50800427C1B /* GRLPrintHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLPrintHeaderController.h; sourceTree = "<group>"; };
+		3786365F1379D50800427C1B /* GRLPrintHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLPrintHeaderController.m; sourceTree = "<group>"; };
+		378636601379D50800427C1B /* GRLRotatedTextObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLRotatedTextObject.h; sourceTree = "<group>"; };
+		378636611379D50800427C1B /* GRLRotatedTextObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLRotatedTextObject.m; sourceTree = "<group>"; };
+		378636621379D50800427C1B /* GRLTextObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLTextObject.h; sourceTree = "<group>"; };
+		378636631379D50800427C1B /* GRLTextObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLTextObject.m; sourceTree = "<group>"; };
+		378636641379D50800427C1B /* GRLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLTextView.h; sourceTree = "<group>"; };
+		378636651379D50800427C1B /* GRLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLTextView.m; sourceTree = "<group>"; };
+		378636671379D50800427C1B /* calcu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = calcu.c; sourceTree = "<group>"; };
+		378636691379D50800427C1B /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtils.h; sourceTree = "<group>"; };
+		3786366A1379D50800427C1B /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtils.m; sourceTree = "<group>"; };
+		3786366B1379D50800427C1B /* NSColor-Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor-Additions.h"; sourceTree = "<group>"; };
+		3786366C1379D50800427C1B /* NSColor-Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor-Additions.m"; sourceTree = "<group>"; };
+		3786366D1379D50800427C1B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		3786366E1379D50800427C1B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		3786366F1379D50800427C1B /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		378636701379D50800427C1B /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		378636711379D50800427C1B /* NSManagedObjectContext+EZFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+EZFetch.h"; sourceTree = "<group>"; };
+		378636721379D50800427C1B /* NSManagedObjectContext+EZFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+EZFetch.m"; sourceTree = "<group>"; };
+		378636731379D50800427C1B /* GRLFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLFunction.h; sourceTree = "<group>"; };
+		378636741379D50800427C1B /* GRLFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLFunction.m; sourceTree = "<group>"; };
+		378636751379D50800427C1B /* GRLZeroer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLZeroer.h; sourceTree = "<group>"; };
+		378636761379D50800427C1B /* GRLZeroer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLZeroer.m; sourceTree = "<group>"; };
+		378636791379D50800427C1B /* DateHeaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHeaderController.h; sourceTree = "<group>"; };
+		3786367A1379D50800427C1B /* DateHeaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHeaderController.m; sourceTree = "<group>"; };
+		3786367B1379D50800427C1B /* GRLAttendanceDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLAttendanceDS.h; sourceTree = "<group>"; };
+		3786367C1379D50800427C1B /* GRLAttendanceDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLAttendanceDS.m; sourceTree = "<group>"; };
+		3786367F1379D50800427C1B /* PhotoRosterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoRosterController.h; sourceTree = "<group>"; };
+		378636801379D50800427C1B /* PhotoRosterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoRosterController.m; sourceTree = "<group>"; };
+		378636821379D50800427C1B /* LetterGradeLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterGradeLookup.h; sourceTree = "<group>"; };
+		378636831379D50800427C1B /* LetterGradeLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterGradeLookup.m; sourceTree = "<group>"; };
+		378636841379D50800427C1B /* GRLScoreDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLScoreDS.h; sourceTree = "<group>"; };
+		378636851379D50800427C1B /* GRLScoreDS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLScoreDS.m; sourceTree = "<group>"; };
+		378636861379D50800427C1B /* ScoreHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreHeaderViewController.h; sourceTree = "<group>"; };
+		378636871379D50800427C1B /* ScoreHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreHeaderViewController.m; sourceTree = "<group>"; };
+		378636891379D50800427C1B /* HeaderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderScrollView.h; sourceTree = "<group>"; };
+		3786368A1379D50800427C1B /* HeaderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderScrollView.m; sourceTree = "<group>"; };
+		3786368B1379D50800427C1B /* GRLNameTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLNameTableView.h; sourceTree = "<group>"; };
+		3786368E1379D50800427C1B /* GRLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLScrollView.m; sourceTree = "<group>"; };
+		3786368F1379D50800427C1B /* SpreadsheetDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadsheetDataSource.h; sourceTree = "<group>"; };
+		378636901379D50800427C1B /* SpreadsheetDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadsheetDataSource.m; sourceTree = "<group>"; };
+		378636911379D50800427C1B /* SpreadsheetFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadsheetFieldCell.h; sourceTree = "<group>"; };
+		378636921379D50800427C1B /* SpreadsheetFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadsheetFieldCell.m; sourceTree = "<group>"; };
+		378636931379D50800427C1B /* SpreadsheetFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadsheetFieldEditor.h; sourceTree = "<group>"; };
+		378636941379D50800427C1B /* SpreadsheetFieldEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadsheetFieldEditor.m; sourceTree = "<group>"; };
+		378636951379D50800427C1B /* SpreadsheetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadsheetTableView.h; sourceTree = "<group>"; };
+		378636961379D50800427C1B /* SpreadsheetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadsheetTableView.m; sourceTree = "<group>"; };
+		378636971379D50800427C1B /* VerticalTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalTextCell.h; sourceTree = "<group>"; };
+		378636981379D50800427C1B /* VerticalTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalTextCell.m; sourceTree = "<group>"; };
+		378637151379D58500427C1B /* v1.doc.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = v1.doc.xcdatamodel; sourceTree = "<group>"; };
+		378637D91379D65100427C1B /* Add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Add.tiff; sourceTree = "<group>"; };
+		378637DA1379D65100427C1B /* AddSmall.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AddSmall.tiff; sourceTree = "<group>"; };
+		378637DB1379D65100427C1B /* Blue Ball.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Blue Ball.tiff"; sourceTree = "<group>"; };
+		378637DC1379D65100427C1B /* Brushed Window.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Brushed Window.tiff"; sourceTree = "<group>"; };
+		378637DD1379D65100427C1B /* Burn.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Burn.tiff; sourceTree = "<group>"; };
+		378637DE1379D65100427C1B /* button_action.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_action.tiff; sourceTree = "<group>"; };
+		378637DF1379D65100427C1B /* button_add.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_add.tiff; sourceTree = "<group>"; };
+		378637E01379D65100427C1B /* button_bar_handle.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_bar_handle.tiff; sourceTree = "<group>"; };
+		378637E11379D65100427C1B /* button_bar_spacer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_bar_spacer.tiff; sourceTree = "<group>"; };
+		378637E21379D65100427C1B /* button_clear.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_clear.tiff; sourceTree = "<group>"; };
+		378637E31379D65100427C1B /* button_duplicate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_duplicate.tiff; sourceTree = "<group>"; };
+		378637E41379D65100427C1B /* button_edit.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_edit.tiff; sourceTree = "<group>"; };
+		378637E51379D65100427C1B /* button_edit_mode.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_edit_mode.tiff; sourceTree = "<group>"; };
+		378637E61379D65100427C1B /* button_edit_mode_selected.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_edit_mode_selected.tiff; sourceTree = "<group>"; };
+		378637E71379D65100427C1B /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
+		378637E81379D65100427C1B /* button_pagination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_pagination.png; sourceTree = "<group>"; };
+		378637E91379D65100427C1B /* button_refresh.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_refresh.tiff; sourceTree = "<group>"; };
+		378637EA1379D65100427C1B /* button_remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = button_remove.tiff; sourceTree = "<group>"; };
+		378637EB1379D65100427C1B /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
+		378637EC1379D65100427C1B /* colors.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = colors.tiff; sourceTree = "<group>"; };
+		378637ED1379D65100427C1B /* Dashboard.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Dashboard.tiff; sourceTree = "<group>"; };
+		378637EE1379D65100427C1B /* Database.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Database.tiff; sourceTree = "<group>"; };
+		378637EF1379D65100427C1B /* Delete.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Delete.tiff; sourceTree = "<group>"; };
+		378637F01379D65100427C1B /* Disc.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Disc.tiff; sourceTree = "<group>"; };
+		378637F11379D65100427C1B /* Drawer-List.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Drawer-List.tiff"; sourceTree = "<group>"; };
+		378637F21379D65100427C1B /* Drawer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Drawer.tiff; sourceTree = "<group>"; };
+		378637F31379D65100427C1B /* Duplicate.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Duplicate.tiff; sourceTree = "<group>"; };
+		378637F41379D65100427C1B /* Eject.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Eject.tiff; sourceTree = "<group>"; };
+		378637F51379D65100427C1B /* Emoticon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Emoticon.tiff; sourceTree = "<group>"; };
+		378637F61379D65100427C1B /* flag.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = flag.tiff; sourceTree = "<group>"; };
+		378637F71379D65100427C1B /* Folder.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Folder.tiff; sourceTree = "<group>"; };
+		378637F81379D65100427C1B /* General Preferences.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "General Preferences.tiff"; sourceTree = "<group>"; };
+		378637F91379D65100427C1B /* Get Info.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Get Info.tiff"; sourceTree = "<group>"; };
+		378637FA1379D65100427C1B /* Green Ball.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Green Ball.tiff"; sourceTree = "<group>"; };
+		378637FB1379D65100427C1B /* Help.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Help.tiff; sourceTree = "<group>"; };
+		378637FC1379D65100427C1B /* History.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = History.tiff; sourceTree = "<group>"; };
+		378637FD1379D65100427C1B /* HUD.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = HUD.tiff; sourceTree = "<group>"; };
+		378637FE1379D65100427C1B /* Linkback Green 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Linkback Green 2.tiff"; sourceTree = "<group>"; };
+		378637FF1379D65100427C1B /* Linkback Green.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Linkback Green.tiff"; sourceTree = "<group>"; };
+		378638001379D65100427C1B /* LinkBack.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = LinkBack.tiff; sourceTree = "<group>"; };
+		378638011379D65100427C1B /* minus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus-8.png"; sourceTree = "<group>"; };
+		378638021379D65100427C1B /* Movies.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Movies.tiff; sourceTree = "<group>"; };
+		378638031379D65100427C1B /* Network Utility.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Network Utility.tiff"; sourceTree = "<group>"; };
+		378638041379D65100427C1B /* Orange Ball.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Orange Ball.tiff"; sourceTree = "<group>"; };
+		378638051379D65100427C1B /* Pause.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Pause.tiff; sourceTree = "<group>"; };
+		378638061379D65100427C1B /* Play.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Play.tiff; sourceTree = "<group>"; };
+		378638071379D65100427C1B /* plus-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-8.png"; sourceTree = "<group>"; };
+		378638081379D65100427C1B /* Power.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Power.tiff; sourceTree = "<group>"; };
+		378638091379D65100427C1B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		3786380A1379D65100427C1B /* Record.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Record.tiff; sourceTree = "<group>"; };
+		3786380B1379D65100427C1B /* Red Ball.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Red Ball.tiff"; sourceTree = "<group>"; };
+		3786380C1379D65100427C1B /* reload.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = reload.tiff; sourceTree = "<group>"; };
+		3786380D1379D65100427C1B /* Remove.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Remove.tiff; sourceTree = "<group>"; };
+		3786380E1379D65100427C1B /* RemoveSmall.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RemoveSmall.tiff; sourceTree = "<group>"; };
+		3786380F1379D65100427C1B /* RSS 2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "RSS 2.tiff"; sourceTree = "<group>"; };
+		378638101379D65100427C1B /* RSS.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = RSS.tiff; sourceTree = "<group>"; };
+		378638111379D65100427C1B /* Smart Folder.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Smart Folder.tiff"; sourceTree = "<group>"; };
+		378638121379D65100427C1B /* SnapBack.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SnapBack.tiff; sourceTree = "<group>"; };
+		378638131379D65100427C1B /* Spotlight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Spotlight.tiff; sourceTree = "<group>"; };
+		378638141379D65100427C1B /* Sticky.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Sticky.tiff; sourceTree = "<group>"; };
+		378638151379D65100427C1B /* Stop.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Stop.tiff; sourceTree = "<group>"; };
+		378638161379D65100427C1B /* Terminal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Terminal.tiff; sourceTree = "<group>"; };
+		378638171379D65100427C1B /* Universal Binary.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Universal Binary.tiff"; sourceTree = "<group>"; };
+		378638181379D65100427C1B /* Users.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Users.tiff; sourceTree = "<group>"; };
+		3786381A1379D65100427C1B /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3786381C1379D65100427C1B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		3786381E1379D65100427C1B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/GRLDocument.nib; sourceTree = "<group>"; };
+		378638201379D65100427C1B /* GradeLedger-Doc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "GradeLedger-Doc.icns"; sourceTree = "<group>"; };
+		378638211379D65100427C1B /* GradeLedger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = GradeLedger.icns; sourceTree = "<group>"; };
+		378638301379D65100427C1B /* GRLEmailTemplate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GRLEmailTemplate.plist; sourceTree = "<group>"; };
+		378638871379D67900427C1B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		378A147C11566CB700D57443 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
+		378A15DB11568A4D00D57443 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = /Applications/Mail.app; sourceTree = "<absolute>"; };
+		37B5408F11515F23009D2939 /* GradeLedger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradeLedger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C58381116B74FA004B96AD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		37D8BCBE1379EF9E00C5C48E /* GRLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRLScrollView.h; sourceTree = "<group>"; };
+		37D8BCC01379F01E00C5C48E /* GRLNameTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRLNameTableView.m; sourceTree = "<group>"; };
+		37E721481169336C008EE2CD /* TexLege.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TexLege.xcodeproj; path = "/Users/greg/Source Code/TexLege/TexLege/TexLege.xcodeproj"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37B5408711515F23009D2939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37B5408811515F23009D2939 /* Cocoa.framework in Frameworks */,
+				378A147D11566CB700D57443 /* ScriptingBridge.framework in Frameworks */,
+				37C58382116B74FA004B96AD /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				37C58381116B74FA004B96AD /* CoreData.framework */,
+				378A147C11566CB700D57443 /* ScriptingBridge.framework */,
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37B5408F11515F23009D2939 /* GradeLedger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* Perfect Score */ = {
+			isa = PBXGroup;
+			children = (
+				378636111379D50800427C1B /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				378637131379D58500427C1B /* Data */,
+				378637D71379D65100427C1B /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = "Perfect Score";
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3716404A13774D610018A23A /* JSONKit */,
+				378A15DB11568A4D00D57443 /* Mail.app */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3716404A13774D610018A23A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				3716404B13774D610018A23A /* JSONKit.h */,
+				3716404C13774D610018A23A /* JSONKit.m */,
+			);
+			name = JSONKit;
+			path = ../GitHub/RestKit/Vendor/JSONKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		378636111379D50800427C1B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				378636231379D50800427C1B /* Main Files */,
+				3786361F1379D50800427C1B /* Application Support */,
+				378636121379D50800427C1B /* Administrative */,
+				378636661379D50800427C1B /* Utilities */,
+				3786363D1379D50800427C1B /* Reports */,
+				3786362A1379D50800427C1B /* Models */,
+				378636771379D50800427C1B /* View Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		378636121379D50800427C1B /* Administrative */ = {
+			isa = PBXGroup;
+			children = (
+				378636131379D50800427C1B /* Log Views */,
+				3786361B1379D50800427C1B /* GRLHelpManager.h */,
+				3786361C1379D50800427C1B /* GRLHelpManager.m */,
+				3786361D1379D50800427C1B /* GRLPasswordProtect.h */,
+				3786361E1379D50800427C1B /* GRLPasswordProtect.m */,
+			);
+			path = Administrative;
+			sourceTree = "<group>";
+		};
+		378636131379D50800427C1B /* Log Views */ = {
+			isa = PBXGroup;
+			children = (
+				378636141379D50800427C1B /* RowResizableOutlineView.h */,
+				378636151379D50800427C1B /* RowResizableOutlineView.m */,
+				378636161379D50800427C1B /* RowResizableTableView.h */,
+				378636171379D50800427C1B /* RowResizableTableView.m */,
+				378636181379D50800427C1B /* RowResizableViewImplementation.h */,
+				378636191379D50800427C1B /* RowResizableViewMethods.h */,
+				3786361A1379D50800427C1B /* RowResizableViewVars.h */,
+			);
+			path = "Log Views";
+			sourceTree = "<group>";
+		};
+		3786361F1379D50800427C1B /* Application Support */ = {
+			isa = PBXGroup;
+			children = (
+				378636201379D50800427C1B /* main.m */,
+				378636211379D50800427C1B /* GradeLedger_Prefix.pch */,
+				378636221379D50800427C1B /* GRLDefines.h */,
+			);
+			path = "Application Support";
+			sourceTree = "<group>";
+		};
+		378636231379D50800427C1B /* Main Files */ = {
+			isa = PBXGroup;
+			children = (
+				378636241379D50800427C1B /* GRLDatabase.h */,
+				378636251379D50800427C1B /* GRLDatabase.m */,
+				378636261379D50800427C1B /* GRLDocument.h */,
+				378636271379D50800427C1B /* GRLDocument.m */,
+				378636281379D50800427C1B /* GRLDocumentController.h */,
+				378636291379D50800427C1B /* GRLDocumentController.m */,
+			);
+			path = "Main Files";
+			sourceTree = "<group>";
+		};
+		3786362A1379D50800427C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3786362B1379D50800427C1B /* AssignmentObj.h */,
+				3786362C1379D50800427C1B /* AssignmentObj.m */,
+				3786362D1379D50800427C1B /* AttendanceForDate.h */,
+				3786362E1379D50800427C1B /* AttendanceForDate.m */,
+				3786362F1379D50800427C1B /* CategoryObj.h */,
+				378636301379D50800427C1B /* CategoryObj.m */,
+				378636311379D50800427C1B /* DocPrefParameter.h */,
+				378636321379D50800427C1B /* DocPrefParameter.m */,
+				378636331379D50800427C1B /* DocumentPreferences.h */,
+				378636341379D50800427C1B /* DocumentPreferences.m */,
+				378636351379D50800427C1B /* NotesObj.h */,
+				378636361379D50800427C1B /* NotesObj.m */,
+				378636371379D50800427C1B /* ScoreObj.h */,
+				378636381379D50800427C1B /* ScoreObj.m */,
+				378636391379D50800427C1B /* StudentAttributes.h */,
+				3786363A1379D50800427C1B /* StudentAttributes.m */,
+				3786363B1379D50800427C1B /* StudentObj.h */,
+				3786363C1379D50800427C1B /* StudentObj.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3786363D1379D50800427C1B /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				3786363E1379D50800427C1B /* Notifications and Email */,
+				3786364F1379D50800427C1B /* Print and Export */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		3786363E1379D50800427C1B /* Notifications and Email */ = {
+			isa = PBXGroup;
+			children = (
+				3786363F1379D50800427C1B /* GRLAttendanceCodeEvent.h */,
+				378636401379D50800427C1B /* GRLAttendanceCodeEvent.m */,
+				378636411379D50800427C1B /* GRLEvent.h */,
+				378636421379D50800427C1B /* GRLEvent.m */,
+				378636431379D50800427C1B /* GRLMissingAssignmentEvent.h */,
+				378636441379D50800427C1B /* GRLMissingAssignmentEvent.m */,
+				378636451379D50800427C1B /* GRLNotification.h */,
+				378636461379D50800427C1B /* GRLNotification.m */,
+				378636471379D50800427C1B /* GRLNotificationManager.h */,
+				378636481379D50800427C1B /* GRLNotificationManager.m */,
+				378636491379D50800427C1B /* GRLScoreEvent.h */,
+				3786364A1379D50800427C1B /* GRLScoreEvent.m */,
+				3786364B1379D50800427C1B /* GRLStatController.h */,
+				3786364C1379D50800427C1B /* GRLStatController.m */,
+				3786364D1379D50800427C1B /* GRLStudentEmailer.h */,
+				3786364E1379D50800427C1B /* GRLStudentEmailer.m */,
+			);
+			name = "Notifications and Email";
+			path = "Notifications-Email";
+			sourceTree = "<group>";
+		};
+		3786364F1379D50800427C1B /* Print and Export */ = {
+			isa = PBXGroup;
+			children = (
+				378636501379D50800427C1B /* GRLAttendanceExporter.h */,
+				378636511379D50800427C1B /* GRLAttendanceExporter.m */,
+				378636521379D50800427C1B /* GRLAttendancePrinter.h */,
+				378636531379D50800427C1B /* GRLAttendancePrinter.m */,
+				378636561379D50800427C1B /* GRLExporter.h */,
+				378636571379D50800427C1B /* GRLExporter.m */,
+				3786365C1379D50800427C1B /* GRLPrinter.h */,
+				3786365D1379D50800427C1B /* GRLPrinter.m */,
+				3786365E1379D50800427C1B /* GRLPrintHeaderController.h */,
+				3786365F1379D50800427C1B /* GRLPrintHeaderController.m */,
+				378636581379D50800427C1B /* GRLGrayBox.h */,
+				378636591379D50800427C1B /* GRLGrayBox.m */,
+				3786365A1379D50800427C1B /* GRLPathObject.h */,
+				3786365B1379D50800427C1B /* GRLPathObject.m */,
+				378636601379D50800427C1B /* GRLRotatedTextObject.h */,
+				378636611379D50800427C1B /* GRLRotatedTextObject.m */,
+				378636541379D50800427C1B /* GRLDrawObject.h */,
+				378636551379D50800427C1B /* GRLDrawObject.m */,
+				378636621379D50800427C1B /* GRLTextObject.h */,
+				378636631379D50800427C1B /* GRLTextObject.m */,
+				378636641379D50800427C1B /* GRLTextView.h */,
+				378636651379D50800427C1B /* GRLTextView.m */,
+			);
+			name = "Print and Export";
+			path = "Print-Export";
+			sourceTree = "<group>";
+		};
+		378636661379D50800427C1B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				378636671379D50800427C1B /* calcu.c */,
+				378636691379D50800427C1B /* DateUtils.h */,
+				3786366A1379D50800427C1B /* DateUtils.m */,
+				3786366B1379D50800427C1B /* NSColor-Additions.h */,
+				3786366C1379D50800427C1B /* NSColor-Additions.m */,
+				3786366D1379D50800427C1B /* NSData+Base64.h */,
+				3786366E1379D50800427C1B /* NSData+Base64.m */,
+				3786366F1379D50800427C1B /* NSDate+Helper.h */,
+				378636701379D50800427C1B /* NSDate+Helper.m */,
+				378636711379D50800427C1B /* NSManagedObjectContext+EZFetch.h */,
+				378636721379D50800427C1B /* NSManagedObjectContext+EZFetch.m */,
+				378636731379D50800427C1B /* GRLFunction.h */,
+				378636741379D50800427C1B /* GRLFunction.m */,
+				378636751379D50800427C1B /* GRLZeroer.h */,
+				378636761379D50800427C1B /* GRLZeroer.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		378636771379D50800427C1B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3786367F1379D50800427C1B /* PhotoRosterController.h */,
+				378636801379D50800427C1B /* PhotoRosterController.m */,
+				378636781379D50800427C1B /* Attendance Table */,
+				378636811379D50800427C1B /* Score Table */,
+				378636881379D50800427C1B /* Spreadsheet Tables */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		378636781379D50800427C1B /* Attendance Table */ = {
+			isa = PBXGroup;
+			children = (
+				378636791379D50800427C1B /* DateHeaderController.h */,
+				3786367A1379D50800427C1B /* DateHeaderController.m */,
+				3786367B1379D50800427C1B /* GRLAttendanceDS.h */,
+				3786367C1379D50800427C1B /* GRLAttendanceDS.m */,
+			);
+			path = "Attendance Table";
+			sourceTree = "<group>";
+		};
+		378636811379D50800427C1B /* Score Table */ = {
+			isa = PBXGroup;
+			children = (
+				378636821379D50800427C1B /* LetterGradeLookup.h */,
+				378636831379D50800427C1B /* LetterGradeLookup.m */,
+				378636841379D50800427C1B /* GRLScoreDS.h */,
+				378636851379D50800427C1B /* GRLScoreDS.m */,
+				378636861379D50800427C1B /* ScoreHeaderViewController.h */,
+				378636871379D50800427C1B /* ScoreHeaderViewController.m */,
+			);
+			path = "Score Table";
+			sourceTree = "<group>";
+		};
+		378636881379D50800427C1B /* Spreadsheet Tables */ = {
+			isa = PBXGroup;
+			children = (
+				378636891379D50800427C1B /* HeaderScrollView.h */,
+				3786368A1379D50800427C1B /* HeaderScrollView.m */,
+				3786368B1379D50800427C1B /* GRLNameTableView.h */,
+				37D8BCC01379F01E00C5C48E /* GRLNameTableView.m */,
+				37D8BCBE1379EF9E00C5C48E /* GRLScrollView.h */,
+				3786368E1379D50800427C1B /* GRLScrollView.m */,
+				3786368F1379D50800427C1B /* SpreadsheetDataSource.h */,
+				378636901379D50800427C1B /* SpreadsheetDataSource.m */,
+				378636911379D50800427C1B /* SpreadsheetFieldCell.h */,
+				378636921379D50800427C1B /* SpreadsheetFieldCell.m */,
+				378636931379D50800427C1B /* SpreadsheetFieldEditor.h */,
+				378636941379D50800427C1B /* SpreadsheetFieldEditor.m */,
+				378636951379D50800427C1B /* SpreadsheetTableView.h */,
+				378636961379D50800427C1B /* SpreadsheetTableView.m */,
+				378636971379D50800427C1B /* VerticalTextCell.h */,
+				378636981379D50800427C1B /* VerticalTextCell.m */,
+			);
+			path = "Spreadsheet Tables";
+			sourceTree = "<group>";
+		};
+		378637131379D58500427C1B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				378637141379D58500427C1B /* DocumentModel.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		378637D71379D65100427C1B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				378638871379D67900427C1B /* Info.plist */,
+				378638191379D65100427C1B /* InfoPlist.strings */,
+				378638301379D65100427C1B /* GRLEmailTemplate.plist */,
+				37819571137A2907004B852E /* Read Me.rtf */,
+				3781956F137A286B004B852E /* User's Guide.rtf */,
+				3786381B1379D65100427C1B /* MainMenu.nib */,
+				3786381D1379D65100427C1B /* GRLDocument.nib */,
+				3786381F1379D65100427C1B /* Icon */,
+				378637D81379D65100427C1B /* buttons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		378637D81379D65100427C1B /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				378637D91379D65100427C1B /* Add.tiff */,
+				378637DA1379D65100427C1B /* AddSmall.tiff */,
+				378637DB1379D65100427C1B /* Blue Ball.tiff */,
+				378637DC1379D65100427C1B /* Brushed Window.tiff */,
+				378637DD1379D65100427C1B /* Burn.tiff */,
+				378637DE1379D65100427C1B /* button_action.tiff */,
+				378637DF1379D65100427C1B /* button_add.tiff */,
+				378637E01379D65100427C1B /* button_bar_handle.tiff */,
+				378637E11379D65100427C1B /* button_bar_spacer.tiff */,
+				378637E21379D65100427C1B /* button_clear.tiff */,
+				378637E31379D65100427C1B /* button_duplicate.tiff */,
+				378637E41379D65100427C1B /* button_edit.tiff */,
+				378637E51379D65100427C1B /* button_edit_mode.tiff */,
+				378637E61379D65100427C1B /* button_edit_mode_selected.tiff */,
+				378637E71379D65100427C1B /* button_left.png */,
+				378637E81379D65100427C1B /* button_pagination.png */,
+				378637E91379D65100427C1B /* button_refresh.tiff */,
+				378637EA1379D65100427C1B /* button_remove.tiff */,
+				378637EB1379D65100427C1B /* button_right.png */,
+				378637EC1379D65100427C1B /* colors.tiff */,
+				378637ED1379D65100427C1B /* Dashboard.tiff */,
+				378637EE1379D65100427C1B /* Database.tiff */,
+				378637EF1379D65100427C1B /* Delete.tiff */,
+				378637F01379D65100427C1B /* Disc.tiff */,
+				378637F11379D65100427C1B /* Drawer-List.tiff */,
+				378637F21379D65100427C1B /* Drawer.tiff */,
+				378637F31379D65100427C1B /* Duplicate.tiff */,
+				378637F41379D65100427C1B /* Eject.tiff */,
+				378637F51379D65100427C1B /* Emoticon.tiff */,
+				378637F61379D65100427C1B /* flag.tiff */,
+				378637F71379D65100427C1B /* Folder.tiff */,
+				378637F81379D65100427C1B /* General Preferences.tiff */,
+				378637F91379D65100427C1B /* Get Info.tiff */,
+				378637FA1379D65100427C1B /* Green Ball.tiff */,
+				378637FB1379D65100427C1B /* Help.tiff */,
+				378637FC1379D65100427C1B /* History.tiff */,
+				378637FD1379D65100427C1B /* HUD.tiff */,
+				378637FE1379D65100427C1B /* Linkback Green 2.tiff */,
+				378637FF1379D65100427C1B /* Linkback Green.tiff */,
+				378638001379D65100427C1B /* LinkBack.tiff */,
+				378638011379D65100427C1B /* minus-8.png */,
+				378638021379D65100427C1B /* Movies.tiff */,
+				378638031379D65100427C1B /* Network Utility.tiff */,
+				378638041379D65100427C1B /* Orange Ball.tiff */,
+				378638051379D65100427C1B /* Pause.tiff */,
+				378638061379D65100427C1B /* Play.tiff */,
+				378638071379D65100427C1B /* plus-8.png */,
+				378638081379D65100427C1B /* Power.tiff */,
+				378638091379D65100427C1B /* README.txt */,
+				3786380A1379D65100427C1B /* Record.tiff */,
+				3786380B1379D65100427C1B /* Red Ball.tiff */,
+				3786380C1379D65100427C1B /* reload.tiff */,
+				3786380D1379D65100427C1B /* Remove.tiff */,
+				3786380E1379D65100427C1B /* RemoveSmall.tiff */,
+				3786380F1379D65100427C1B /* RSS 2.tiff */,
+				378638101379D65100427C1B /* RSS.tiff */,
+				378638111379D65100427C1B /* Smart Folder.tiff */,
+				378638121379D65100427C1B /* SnapBack.tiff */,
+				378638131379D65100427C1B /* Spotlight.tiff */,
+				378638141379D65100427C1B /* Sticky.tiff */,
+				378638151379D65100427C1B /* Stop.tiff */,
+				378638161379D65100427C1B /* Terminal.tiff */,
+				378638171379D65100427C1B /* Universal Binary.tiff */,
+				378638181379D65100427C1B /* Users.tiff */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		3786381F1379D65100427C1B /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				378638201379D65100427C1B /* GradeLedger-Doc.icns */,
+				378638211379D65100427C1B /* GradeLedger.icns */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
+		37E721631169338B008EE2CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37E721671169338B008EE2CD /* TexLege.app */,
+				3763EE101354FB28000E524C /* TexLege.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		37B53FF811515F23009D2939 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3716404D13774D610018A23A /* JSONKit.h in Headers */,
+				378636991379D50800427C1B /* RowResizableOutlineView.h in Headers */,
+				3786369B1379D50800427C1B /* RowResizableTableView.h in Headers */,
+				3786369D1379D50800427C1B /* RowResizableViewImplementation.h in Headers */,
+				3786369E1379D50800427C1B /* RowResizableViewMethods.h in Headers */,
+				3786369F1379D50800427C1B /* RowResizableViewVars.h in Headers */,
+				378636A01379D50800427C1B /* GRLHelpManager.h in Headers */,
+				378636A21379D50800427C1B /* GRLPasswordProtect.h in Headers */,
+				378636A51379D50800427C1B /* GradeLedger_Prefix.pch in Headers */,
+				378636A61379D50800427C1B /* GRLDefines.h in Headers */,
+				378636A71379D50800427C1B /* GRLDatabase.h in Headers */,
+				378636A91379D50800427C1B /* GRLDocument.h in Headers */,
+				378636AB1379D50800427C1B /* GRLDocumentController.h in Headers */,
+				378636AD1379D50800427C1B /* AssignmentObj.h in Headers */,
+				378636AF1379D50800427C1B /* AttendanceForDate.h in Headers */,
+				378636B11379D50800427C1B /* CategoryObj.h in Headers */,
+				378636B31379D50800427C1B /* DocPrefParameter.h in Headers */,
+				378636B51379D50800427C1B /* DocumentPreferences.h in Headers */,
+				378636B71379D50800427C1B /* NotesObj.h in Headers */,
+				378636B91379D50800427C1B /* ScoreObj.h in Headers */,
+				378636BB1379D50800427C1B /* StudentAttributes.h in Headers */,
+				378636BD1379D50800427C1B /* StudentObj.h in Headers */,
+				378636BF1379D50800427C1B /* GRLAttendanceCodeEvent.h in Headers */,
+				378636C11379D50800427C1B /* GRLEvent.h in Headers */,
+				378636C31379D50800427C1B /* GRLMissingAssignmentEvent.h in Headers */,
+				378636C51379D50800427C1B /* GRLNotification.h in Headers */,
+				378636C71379D50800427C1B /* GRLNotificationManager.h in Headers */,
+				378636C91379D50800427C1B /* GRLScoreEvent.h in Headers */,
+				378636CB1379D50800427C1B /* GRLStatController.h in Headers */,
+				378636CD1379D50800427C1B /* GRLStudentEmailer.h in Headers */,
+				378636CF1379D50800427C1B /* GRLAttendanceExporter.h in Headers */,
+				378636D11379D50800427C1B /* GRLAttendancePrinter.h in Headers */,
+				378636D31379D50800427C1B /* GRLDrawObject.h in Headers */,
+				378636D51379D50800427C1B /* GRLExporter.h in Headers */,
+				378636D71379D50800427C1B /* GRLGrayBox.h in Headers */,
+				378636D91379D50800427C1B /* GRLPathObject.h in Headers */,
+				378636DB1379D50800427C1B /* GRLPrinter.h in Headers */,
+				378636DD1379D50800427C1B /* GRLPrintHeaderController.h in Headers */,
+				378636DF1379D50800427C1B /* GRLRotatedTextObject.h in Headers */,
+				378636E11379D50800427C1B /* GRLTextObject.h in Headers */,
+				378636E31379D50800427C1B /* GRLTextView.h in Headers */,
+				378636E71379D50800427C1B /* DateUtils.h in Headers */,
+				378636E91379D50800427C1B /* NSColor-Additions.h in Headers */,
+				378636EB1379D50800427C1B /* NSData+Base64.h in Headers */,
+				378636ED1379D50800427C1B /* NSDate+Helper.h in Headers */,
+				378636EF1379D50800427C1B /* NSManagedObjectContext+EZFetch.h in Headers */,
+				378636F11379D50800427C1B /* GRLFunction.h in Headers */,
+				378636F31379D50800427C1B /* GRLZeroer.h in Headers */,
+				378636F51379D50800427C1B /* DateHeaderController.h in Headers */,
+				378636F71379D50800427C1B /* GRLAttendanceDS.h in Headers */,
+				378636FB1379D50800427C1B /* PhotoRosterController.h in Headers */,
+				378636FD1379D50800427C1B /* LetterGradeLookup.h in Headers */,
+				378636FF1379D50800427C1B /* GRLScoreDS.h in Headers */,
+				378637011379D50800427C1B /* ScoreHeaderViewController.h in Headers */,
+				378637031379D50800427C1B /* HeaderScrollView.h in Headers */,
+				378637051379D50800427C1B /* GRLNameTableView.h in Headers */,
+				378637091379D50800427C1B /* SpreadsheetDataSource.h in Headers */,
+				3786370B1379D50800427C1B /* SpreadsheetFieldCell.h in Headers */,
+				3786370D1379D50800427C1B /* SpreadsheetFieldEditor.h in Headers */,
+				3786370F1379D50800427C1B /* SpreadsheetTableView.h in Headers */,
+				378637111379D50800427C1B /* VerticalTextCell.h in Headers */,
+				37D8BCBF1379EF9E00C5C48E /* GRLScrollView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		37B53FF711515F23009D2939 /* GradeLedger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37B5408A11515F23009D2939 /* Build configuration list for PBXNativeTarget "GradeLedger" */;
+			buildPhases = (
+				37B53FF811515F23009D2939 /* Headers */,
+				37B5403B11515F23009D2939 /* Resources */,
+				37B5404811515F23009D2939 /* Sources */,
+				37B5408711515F23009D2939 /* Frameworks */,
+			);
+			buildRules = (
+				378A15D2115689C100D57443 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = GradeLedger;
+			productInstallPath = "$(HOME)/Applications";
+			productName = "Perfect Score";
+			productReference = 37B5408F11515F23009D2939 /* GradeLedger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Gregory S. Combs";
+			};
+			buildConfigurationList = 8B5995CC085B880700CB19C0 /* Build configuration list for PBXProject "GradeLedger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Perfect Score */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37E721631169338B008EE2CD /* Products */;
+					ProjectRef = 37E721481169336C008EE2CD /* TexLege.xcodeproj */;
+				},
+			);
+			projectRoot = "/Users/greg/Source Code/";
+			targets = (
+				37B53FF711515F23009D2939 /* GradeLedger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3763EE101354FB28000E524C /* TexLege.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TexLege.app;
+			remoteRef = 3763EE0F1354FB28000E524C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37E721671169338B008EE2CD /* TexLege.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TexLege.app;
+			remoteRef = 37E721661169338B008EE2CD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37B5403B11515F23009D2939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378A15DC11568A4D00D57443 /* Mail.app in Resources */,
+				378638311379D65200427C1B /* Add.tiff in Resources */,
+				378638321379D65200427C1B /* AddSmall.tiff in Resources */,
+				378638331379D65200427C1B /* Blue Ball.tiff in Resources */,
+				378638341379D65200427C1B /* Brushed Window.tiff in Resources */,
+				378638351379D65200427C1B /* Burn.tiff in Resources */,
+				378638361379D65200427C1B /* button_action.tiff in Resources */,
+				378638371379D65200427C1B /* button_add.tiff in Resources */,
+				378638381379D65200427C1B /* button_bar_handle.tiff in Resources */,
+				378638391379D65200427C1B /* button_bar_spacer.tiff in Resources */,
+				3786383A1379D65200427C1B /* button_clear.tiff in Resources */,
+				3786383B1379D65200427C1B /* button_duplicate.tiff in Resources */,
+				3786383C1379D65200427C1B /* button_edit.tiff in Resources */,
+				3786383D1379D65200427C1B /* button_edit_mode.tiff in Resources */,
+				3786383E1379D65200427C1B /* button_edit_mode_selected.tiff in Resources */,
+				3786383F1379D65200427C1B /* button_left.png in Resources */,
+				378638401379D65200427C1B /* button_pagination.png in Resources */,
+				378638411379D65200427C1B /* button_refresh.tiff in Resources */,
+				378638421379D65200427C1B /* button_remove.tiff in Resources */,
+				378638431379D65200427C1B /* button_right.png in Resources */,
+				378638441379D65200427C1B /* colors.tiff in Resources */,
+				378638451379D65200427C1B /* Dashboard.tiff in Resources */,
+				378638461379D65200427C1B /* Database.tiff in Resources */,
+				378638471379D65200427C1B /* Delete.tiff in Resources */,
+				378638481379D65200427C1B /* Disc.tiff in Resources */,
+				378638491379D65200427C1B /* Drawer-List.tiff in Resources */,
+				3786384A1379D65200427C1B /* Drawer.tiff in Resources */,
+				3786384B1379D65200427C1B /* Duplicate.tiff in Resources */,
+				3786384C1379D65200427C1B /* Eject.tiff in Resources */,
+				3786384D1379D65200427C1B /* Emoticon.tiff in Resources */,
+				3786384E1379D65200427C1B /* flag.tiff in Resources */,
+				3786384F1379D65200427C1B /* Folder.tiff in Resources */,
+				378638501379D65200427C1B /* General Preferences.tiff in Resources */,
+				378638511379D65200427C1B /* Get Info.tiff in Resources */,
+				378638521379D65200427C1B /* Green Ball.tiff in Resources */,
+				378638531379D65200427C1B /* Help.tiff in Resources */,
+				378638541379D65200427C1B /* History.tiff in Resources */,
+				378638551379D65200427C1B /* HUD.tiff in Resources */,
+				378638561379D65200427C1B /* Linkback Green 2.tiff in Resources */,
+				378638571379D65200427C1B /* Linkback Green.tiff in Resources */,
+				378638581379D65200427C1B /* LinkBack.tiff in Resources */,
+				378638591379D65200427C1B /* minus-8.png in Resources */,
+				3786385A1379D65200427C1B /* Movies.tiff in Resources */,
+				3786385B1379D65200427C1B /* Network Utility.tiff in Resources */,
+				3786385C1379D65200427C1B /* Orange Ball.tiff in Resources */,
+				3786385D1379D65200427C1B /* Pause.tiff in Resources */,
+				3786385E1379D65200427C1B /* Play.tiff in Resources */,
+				3786385F1379D65200427C1B /* plus-8.png in Resources */,
+				378638601379D65200427C1B /* Power.tiff in Resources */,
+				378638611379D65200427C1B /* README.txt in Resources */,
+				378638621379D65200427C1B /* Record.tiff in Resources */,
+				378638631379D65200427C1B /* Red Ball.tiff in Resources */,
+				378638641379D65200427C1B /* reload.tiff in Resources */,
+				378638651379D65200427C1B /* Remove.tiff in Resources */,
+				378638661379D65200427C1B /* RemoveSmall.tiff in Resources */,
+				378638671379D65200427C1B /* RSS 2.tiff in Resources */,
+				378638681379D65200427C1B /* RSS.tiff in Resources */,
+				378638691379D65200427C1B /* Smart Folder.tiff in Resources */,
+				3786386A1379D65200427C1B /* SnapBack.tiff in Resources */,
+				3786386B1379D65200427C1B /* Spotlight.tiff in Resources */,
+				3786386C1379D65200427C1B /* Sticky.tiff in Resources */,
+				3786386D1379D65200427C1B /* Stop.tiff in Resources */,
+				3786386E1379D65200427C1B /* Terminal.tiff in Resources */,
+				3786386F1379D65200427C1B /* Universal Binary.tiff in Resources */,
+				378638701379D65200427C1B /* Users.tiff in Resources */,
+				378638711379D65200427C1B /* InfoPlist.strings in Resources */,
+				378638721379D65200427C1B /* MainMenu.nib in Resources */,
+				378638731379D65200427C1B /* GRLDocument.nib in Resources */,
+				378638741379D65200427C1B /* GradeLedger-Doc.icns in Resources */,
+				378638751379D65200427C1B /* GradeLedger.icns in Resources */,
+				378638841379D65200427C1B /* GRLEmailTemplate.plist in Resources */,
+				37819570137A286B004B852E /* User's Guide.rtf in Resources */,
+				37819573137A2907004B852E /* Read Me.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37B5404811515F23009D2939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				378A15E111568A9500D57443 /* Mail.app in Sources */,
+				3716404E13774D610018A23A /* JSONKit.m in Sources */,
+				3786369A1379D50800427C1B /* RowResizableOutlineView.m in Sources */,
+				3786369C1379D50800427C1B /* RowResizableTableView.m in Sources */,
+				378636A11379D50800427C1B /* GRLHelpManager.m in Sources */,
+				378636A31379D50800427C1B /* GRLPasswordProtect.m in Sources */,
+				378636A41379D50800427C1B /* main.m in Sources */,
+				378636A81379D50800427C1B /* GRLDatabase.m in Sources */,
+				378636AA1379D50800427C1B /* GRLDocument.m in Sources */,
+				378636AC1379D50800427C1B /* GRLDocumentController.m in Sources */,
+				378636AE1379D50800427C1B /* AssignmentObj.m in Sources */,
+				378636B01379D50800427C1B /* AttendanceForDate.m in Sources */,
+				378636B21379D50800427C1B /* CategoryObj.m in Sources */,
+				378636B41379D50800427C1B /* DocPrefParameter.m in Sources */,
+				378636B61379D50800427C1B /* DocumentPreferences.m in Sources */,
+				378636B81379D50800427C1B /* NotesObj.m in Sources */,
+				378636BA1379D50800427C1B /* ScoreObj.m in Sources */,
+				378636BC1379D50800427C1B /* StudentAttributes.m in Sources */,
+				378636BE1379D50800427C1B /* StudentObj.m in Sources */,
+				378636C01379D50800427C1B /* GRLAttendanceCodeEvent.m in Sources */,
+				378636C21379D50800427C1B /* GRLEvent.m in Sources */,
+				378636C41379D50800427C1B /* GRLMissingAssignmentEvent.m in Sources */,
+				378636C61379D50800427C1B /* GRLNotification.m in Sources */,
+				378636C81379D50800427C1B /* GRLNotificationManager.m in Sources */,
+				378636CA1379D50800427C1B /* GRLScoreEvent.m in Sources */,
+				378636CC1379D50800427C1B /* GRLStatController.m in Sources */,
+				378636CE1379D50800427C1B /* GRLStudentEmailer.m in Sources */,
+				378636D01379D50800427C1B /* GRLAttendanceExporter.m in Sources */,
+				378636D21379D50800427C1B /* GRLAttendancePrinter.m in Sources */,
+				378636D41379D50800427C1B /* GRLDrawObject.m in Sources */,
+				378636D61379D50800427C1B /* GRLExporter.m in Sources */,
+				378636D81379D50800427C1B /* GRLGrayBox.m in Sources */,
+				378636DA1379D50800427C1B /* GRLPathObject.m in Sources */,
+				378636DC1379D50800427C1B /* GRLPrinter.m in Sources */,
+				378636DE1379D50800427C1B /* GRLPrintHeaderController.m in Sources */,
+				378636E01379D50800427C1B /* GRLRotatedTextObject.m in Sources */,
+				378636E21379D50800427C1B /* GRLTextObject.m in Sources */,
+				378636E41379D50800427C1B /* GRLTextView.m in Sources */,
+				378636E51379D50800427C1B /* calcu.c in Sources */,
+				378636E81379D50800427C1B /* DateUtils.m in Sources */,
+				378636EA1379D50800427C1B /* NSColor-Additions.m in Sources */,
+				378636EC1379D50800427C1B /* NSData+Base64.m in Sources */,
+				378636EE1379D50800427C1B /* NSDate+Helper.m in Sources */,
+				378636F01379D50800427C1B /* NSManagedObjectContext+EZFetch.m in Sources */,
+				378636F21379D50800427C1B /* GRLFunction.m in Sources */,
+				378636F41379D50800427C1B /* GRLZeroer.m in Sources */,
+				378636F61379D50800427C1B /* DateHeaderController.m in Sources */,
+				378636F81379D50800427C1B /* GRLAttendanceDS.m in Sources */,
+				378636FC1379D50800427C1B /* PhotoRosterController.m in Sources */,
+				378636FE1379D50800427C1B /* LetterGradeLookup.m in Sources */,
+				378637001379D50800427C1B /* GRLScoreDS.m in Sources */,
+				378637021379D50800427C1B /* ScoreHeaderViewController.m in Sources */,
+				378637041379D50800427C1B /* HeaderScrollView.m in Sources */,
+				378637081379D50800427C1B /* GRLScrollView.m in Sources */,
+				3786370A1379D50800427C1B /* SpreadsheetDataSource.m in Sources */,
+				3786370C1379D50800427C1B /* SpreadsheetFieldCell.m in Sources */,
+				3786370E1379D50800427C1B /* SpreadsheetFieldEditor.m in Sources */,
+				378637101379D50800427C1B /* SpreadsheetTableView.m in Sources */,
+				378637121379D50800427C1B /* VerticalTextCell.m in Sources */,
+				3786371C1379D58500427C1B /* DocumentModel.xcdatamodeld in Sources */,
+				37D8BCC11379F01E00C5C48E /* GRLNameTableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		37819571137A2907004B852E /* Read Me.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37819572137A2907004B852E /* English */,
+			);
+			name = "Read Me.rtf";
+			sourceTree = "<group>";
+		};
+		378638191379D65100427C1B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3786381A1379D65100427C1B /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3786381B1379D65100427C1B /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3786381C1379D65100427C1B /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		3786381D1379D65100427C1B /* GRLDocument.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3786381E1379D65100427C1B /* English */,
+			);
+			name = GRLDocument.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37B5408B11515F23009D2939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		37B5408C11515F23009D2939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		8B5995CD085B880700CB19C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_DEBUGGING_SYMBOLS = full;
+				GCC_ENABLE_EXCEPTIONS = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GradeLedger_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = GradeLedger;
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		8B5995CE085B880700CB19C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = GradeLedger_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = GradeLedger;
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37B5408A11515F23009D2939 /* Build configuration list for PBXNativeTarget "GradeLedger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37B5408B11515F23009D2939 /* Debug */,
+				37B5408C11515F23009D2939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B5995CC085B880700CB19C0 /* Build configuration list for PBXProject "GradeLedger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B5995CD085B880700CB19C0 /* Debug */,
+				8B5995CE085B880700CB19C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		378637141379D58500427C1B /* DocumentModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				378637151379D58500427C1B /* v1.doc.xcdatamodel */,
+			);
+			currentVersion = 378637151379D58500427C1B /* v1.doc.xcdatamodel */;
+			path = DocumentModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

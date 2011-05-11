@@ -1,0 +1,6 @@
+{
+	CFBundleName = "GradeLedger";
+	"CFBundleShortVersionString" = "GradeLedger version 1.0";
+	"CFBundleGetInfoString" = "GradeLedger version 1.0, Copyright 2011 Gregory S. Combs.";
+	"NSHumanReadableCopyright" = "Copyright 2011 Gregory S. Combs.";
+}
