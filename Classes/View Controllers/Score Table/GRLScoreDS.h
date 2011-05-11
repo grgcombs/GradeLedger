@@ -34,14 +34,13 @@
 	IBOutlet DocumentPreferences *prefs;
 	
 	NSInteger attendanceColumn;
-	
 	NSArray *scheduleObservations;
+	BOOL initialized;
 
 }
 
 - (void)reloadTableData;
-- (void)resizeAssViewToFit;
-
+- (void)resizeAssViewToFit:(NSNotification*)notif;
 - (void)refreshFinalScores:(id)sender;
 
 
@@ -51,20 +50,20 @@
 - (IBAction)newDate:(id)sender;
 - (IBAction)confirmDate:(id)sender;
 - (IBAction)cancelDate:(id)sender;
-@property (retain) NSPopUpButton *codeForAss;		// Collection Code Menu
-@property (retain) NSPopUpButton *dateForAss;		// Collection Date Menu
-@property (retain) NSWindow *dateSheet;				// Custom Collection Date Sheet
-@property (retain) NSDatePicker *dateField;
 
-@property (retain) GRLAttendanceDS *attendanceDS;
-@property (retain) NSTableView *nameTable;
-@property (retain) LetterGradeLookup *letterGrades;	// Letter grades from 
+@property (nonatomic, assign) NSPopUpButton *codeForAss;		// Collection Code Menu
+@property (nonatomic, assign) NSPopUpButton *dateForAss;		// Collection Date Menu
+@property (nonatomic, assign) NSWindow *dateSheet;				// Custom Collection Date Sheet
+@property (nonatomic, assign) NSDatePicker *dateField;
 
-@property (retain) ScoreHeaderViewController *headerTableDS;		// Assignment Header View
+@property (nonatomic, assign) GRLAttendanceDS *attendanceDS;
+@property (nonatomic, assign) NSTableView *nameTable;
+@property (nonatomic, assign) LetterGradeLookup *letterGrades;	// Letter grades from 
+@property (nonatomic, assign) ScoreHeaderViewController *headerTableDS;		// Assignment Header View
+@property (nonatomic, assign) GRLDatabase *data;
+@property (nonatomic, assign) DocumentPreferences *prefs;
 
-@property (retain) GRLDatabase *data;
-@property (retain) DocumentPreferences *prefs;
-@property NSInteger attendanceColumn;
-@property (retain) NSArray *scheduleObservations;
+@property (nonatomic, retain) NSArray *scheduleObservations;
+@property (nonatomic) NSInteger attendanceColumn;
 
 @end

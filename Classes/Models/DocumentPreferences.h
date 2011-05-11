@@ -78,23 +78,25 @@
 
 
 @interface DocumentPreferences : NSObject {
-	NSDictionary *_defaults;
 	IBOutlet NSPersistentDocument *_associatedDocument;
+	NSDictionary *_defaults;
 	
-	NSMutableArray *m_classDaysArray;
+	NSMutableArray *classDaysList;
 	NSInteger numberOfClassDaysThusFar;
 	NSArray *scheduleKeys;
 }
 
-@property (retain) NSPersistentDocument *associatedDocument;
-@property (assign) NSDictionary *defaults;
-@property (assign, readonly) NSInteger classDays;
-@property (assign, readonly) BOOL printName;
-@property (assign, readonly) BOOL printID;
-@property (readonly) NSInteger numberOfClassDaysThusFar;
+@property (nonatomic, assign) NSPersistentDocument *associatedDocument;
 
-@property (assign) NSMutableArray *classDaysList;
-@property (retain) NSArray *scheduleKeys;
+@property (nonatomic, readonly) NSInteger classDays;
+@property (nonatomic, readonly) BOOL printName;
+@property (nonatomic, readonly) BOOL printID;
+@property (nonatomic, readonly) NSInteger numberOfClassDaysThusFar;
+@property (nonatomic, readonly) NSInteger numberOfClassDays;
+
+@property (nonatomic, copy) NSMutableArray *classDaysList;
+@property (nonatomic, copy) NSArray *scheduleKeys;
+@property (nonatomic, copy) NSDictionary *defaults;
 
 //- (id)initWithDocument:(NSPersistentDocument*)associatedDocument;
 - (NSArray*)allParameterNames;

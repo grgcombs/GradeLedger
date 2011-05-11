@@ -19,10 +19,9 @@
     IBOutlet NSWindow *passwordGetterWindow;
     IBOutlet NSTextField *passwordGetterField;
     
-    NSString *password;
+    NSString *m_password;
 }
 
-- (void)setPassword:(NSString *)pwd;
 
 - (BOOL)checkIfPasswordIsValid;
 - (NSString *)setOrChangePassword;
@@ -33,11 +32,12 @@
 - (IBAction)checkPassword:(id)sender;
 - (IBAction)passwordNotKnown:(id)sender;
 
-@property (retain) NSWindow *docWindow;
-@property (retain) NSWindow *passwordSheet;
-@property (retain) NSTextField *oldPassword;
-@property (retain) NSTextField *newPassword;
-@property (retain) NSTextField *newPasswordAgain;
-@property (retain) NSWindow *passwordGetterWindow;
-@property (retain) NSTextField *passwordGetterField;
+@property (nonatomic, assign) NSWindow *docWindow;
+@property (nonatomic, assign) NSWindow *passwordSheet;
+@property (nonatomic, assign) NSTextField *oldPassword;
+@property (nonatomic, assign) NSTextField *newPassword;
+@property (nonatomic, assign) NSTextField *newPasswordAgain;
+@property (nonatomic, assign) NSWindow *passwordGetterWindow;
+@property (nonatomic, assign) NSTextField *passwordGetterField;
+@property (nonatomic, copy) NSString *password;
 @end

@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3718CD44137B37A4001C80C2 /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3718CD43137B37A4001C80C2 /* Read Me.rtf */; };
+		3718CD4D137B3801001C80C2 /* GRLDefaultLetterGrades.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3718CD4C137B3801001C80C2 /* GRLDefaultLetterGrades.plist */; };
+		3718CD51137B3801001C80C2 /* GRLEmailTemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3718CD50137B3801001C80C2 /* GRLEmailTemplate.plist */; };
+		3718CD54137B3843001C80C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3718CD53137B3843001C80C2 /* InfoPlist.strings */; };
+		3718CD93137B4014001C80C2 /* User's Guide.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3718CD92137B4014001C80C2 /* User's Guide.rtf */; };
 		37536D58137A749A002C9C4B /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 37536D3D137A749A002C9C4B /* JSONKit.h */; };
 		37536D59137A749A002C9C4B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 37536D3E137A749A002C9C4B /* JSONKit.m */; };
-		37819570137A286B004B852E /* User's Guide.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3781956F137A286B004B852E /* User's Guide.rtf */; };
-		37819573137A2907004B852E /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 37819571137A2907004B852E /* Read Me.rtf */; };
 		378636991379D50800427C1B /* RowResizableOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636141379D50800427C1B /* RowResizableOutlineView.h */; };
 		3786369A1379D50800427C1B /* RowResizableOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636151379D50800427C1B /* RowResizableOutlineView.m */; };
 		3786369B1379D50800427C1B /* RowResizableTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636161379D50800427C1B /* RowResizableTableView.h */; };
@@ -88,8 +91,6 @@
 		378636E31379D50800427C1B /* GRLTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636641379D50800427C1B /* GRLTextView.h */; };
 		378636E41379D50800427C1B /* GRLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 378636651379D50800427C1B /* GRLTextView.m */; };
 		378636E51379D50800427C1B /* calcu.c in Sources */ = {isa = PBXBuildFile; fileRef = 378636671379D50800427C1B /* calcu.c */; };
-		378636E71379D50800427C1B /* DateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636691379D50800427C1B /* DateUtils.h */; };
-		378636E81379D50800427C1B /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366A1379D50800427C1B /* DateUtils.m */; };
 		378636E91379D50800427C1B /* NSColor-Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786366B1379D50800427C1B /* NSColor-Additions.h */; };
 		378636EA1379D50800427C1B /* NSColor-Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366C1379D50800427C1B /* NSColor-Additions.m */; };
 		378636EB1379D50800427C1B /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 3786366D1379D50800427C1B /* NSData+Base64.h */; };
@@ -193,17 +194,17 @@
 		3786386E1379D65200427C1B /* Terminal.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638161379D65100427C1B /* Terminal.tiff */; };
 		3786386F1379D65200427C1B /* Universal Binary.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638171379D65100427C1B /* Universal Binary.tiff */; };
 		378638701379D65200427C1B /* Users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 378638181379D65100427C1B /* Users.tiff */; };
-		378638711379D65200427C1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378638191379D65100427C1B /* InfoPlist.strings */; };
 		378638721379D65200427C1B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3786381B1379D65100427C1B /* MainMenu.nib */; };
 		378638731379D65200427C1B /* GRLDocument.nib in Resources */ = {isa = PBXBuildFile; fileRef = 3786381D1379D65100427C1B /* GRLDocument.nib */; };
 		378638741379D65200427C1B /* GradeLedger-Doc.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378638201379D65100427C1B /* GradeLedger-Doc.icns */; };
 		378638751379D65200427C1B /* GradeLedger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 378638211379D65100427C1B /* GradeLedger.icns */; };
-		378638841379D65200427C1B /* GRLEmailTemplate.plist in Resources */ = {isa = PBXBuildFile; fileRef = 378638301379D65100427C1B /* GRLEmailTemplate.plist */; };
 		378A147D11566CB700D57443 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378A147C11566CB700D57443 /* ScriptingBridge.framework */; };
 		378A15DC11568A4D00D57443 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = 378A15DB11568A4D00D57443 /* Mail.app */; };
 		378A15E111568A9500D57443 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = 378A15DB11568A4D00D57443 /* Mail.app */; };
 		37B5408811515F23009D2939 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 		37C58382116B74FA004B96AD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C58381116B74FA004B96AD /* CoreData.framework */; };
+		37CEC449137B040800D05742 /* DateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636691379D50800427C1B /* DateUtils.h */; };
+		37CEC44A137B040C00D05742 /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3786366A1379D50800427C1B /* DateUtils.m */; };
 		37D8BCBF1379EF9E00C5C48E /* GRLScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D8BCBE1379EF9E00C5C48E /* GRLScrollView.h */; };
 		37D8BCC11379F01E00C5C48E /* GRLNameTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D8BCC01379F01E00C5C48E /* GRLNameTableView.m */; };
 /* End PBXBuildFile section */
@@ -243,10 +244,13 @@
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3718CD45137B37A4001C80C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = "en.lproj/Read Me.rtf"; sourceTree = "<group>"; };
+		3718CD55137B3849001C80C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3718CD56137B387E001C80C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/GRLEmailTemplate.plist; sourceTree = "<group>"; };
+		3718CD57137B3893001C80C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = en; path = en.lproj/GRLDefaultLetterGrades.plist; sourceTree = "<group>"; };
+		3718CD94137B401B001C80C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = "en.lproj/User's Guide.rtf"; sourceTree = "<group>"; };
 		37536D3D137A749A002C9C4B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		37536D3E137A749A002C9C4B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		3781956F137A286B004B852E /* User's Guide.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "User's Guide.rtf"; path = "English.lproj/User's Guide.rtf"; sourceTree = "<group>"; };
-		37819572137A2907004B852E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		378636141379D50800427C1B /* RowResizableOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableOutlineView.h; sourceTree = "<group>"; };
 		378636151379D50800427C1B /* RowResizableOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowResizableOutlineView.m; sourceTree = "<group>"; };
 		378636161379D50800427C1B /* RowResizableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableTableView.h; sourceTree = "<group>"; };
@@ -429,12 +433,10 @@
 		378638161379D65100427C1B /* Terminal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Terminal.tiff; sourceTree = "<group>"; };
 		378638171379D65100427C1B /* Universal Binary.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Universal Binary.tiff"; sourceTree = "<group>"; };
 		378638181379D65100427C1B /* Users.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Users.tiff; sourceTree = "<group>"; };
-		3786381A1379D65100427C1B /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3786381C1379D65100427C1B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		3786381E1379D65100427C1B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/GRLDocument.nib; sourceTree = "<group>"; };
 		378638201379D65100427C1B /* GradeLedger-Doc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "GradeLedger-Doc.icns"; sourceTree = "<group>"; };
 		378638211379D65100427C1B /* GradeLedger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = GradeLedger.icns; sourceTree = "<group>"; };
-		378638301379D65100427C1B /* GRLEmailTemplate.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GRLEmailTemplate.plist; sourceTree = "<group>"; };
 		378638871379D67900427C1B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		378A147C11566CB700D57443 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
 		378A15DB11568A4D00D57443 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = /Applications/Mail.app; sourceTree = "<absolute>"; };
@@ -761,11 +763,12 @@
 		378637D71379D65100427C1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3718CD4C137B3801001C80C2 /* GRLDefaultLetterGrades.plist */,
+				3718CD50137B3801001C80C2 /* GRLEmailTemplate.plist */,
+				3718CD53137B3843001C80C2 /* InfoPlist.strings */,
 				378638871379D67900427C1B /* Info.plist */,
-				378638191379D65100427C1B /* InfoPlist.strings */,
-				378638301379D65100427C1B /* GRLEmailTemplate.plist */,
-				37819571137A2907004B852E /* Read Me.rtf */,
-				3781956F137A286B004B852E /* User's Guide.rtf */,
+				3718CD92137B4014001C80C2 /* User's Guide.rtf */,
+				3718CD43137B37A4001C80C2 /* Read Me.rtf */,
 				3786381B1379D65100427C1B /* MainMenu.nib */,
 				3786381D1379D65100427C1B /* GRLDocument.nib */,
 				3786381F1379D65100427C1B /* Icon */,
@@ -910,7 +913,6 @@
 				378636DF1379D50800427C1B /* GRLRotatedTextObject.h in Headers */,
 				378636E11379D50800427C1B /* GRLTextObject.h in Headers */,
 				378636E31379D50800427C1B /* GRLTextView.h in Headers */,
-				378636E71379D50800427C1B /* DateUtils.h in Headers */,
 				378636E91379D50800427C1B /* NSColor-Additions.h in Headers */,
 				378636EB1379D50800427C1B /* NSData+Base64.h in Headers */,
 				378636ED1379D50800427C1B /* NSDate+Helper.h in Headers */,
@@ -932,6 +934,7 @@
 				378637111379D50800427C1B /* VerticalTextCell.h in Headers */,
 				37D8BCBF1379EF9E00C5C48E /* GRLScrollView.h in Headers */,
 				37536D58137A749A002C9C4B /* JSONKit.h in Headers */,
+				37CEC449137B040800D05742 /* DateUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,6 +978,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* Perfect Score */;
 			projectDirPath = "";
@@ -1078,14 +1082,15 @@
 				3786386E1379D65200427C1B /* Terminal.tiff in Resources */,
 				3786386F1379D65200427C1B /* Universal Binary.tiff in Resources */,
 				378638701379D65200427C1B /* Users.tiff in Resources */,
-				378638711379D65200427C1B /* InfoPlist.strings in Resources */,
 				378638721379D65200427C1B /* MainMenu.nib in Resources */,
 				378638731379D65200427C1B /* GRLDocument.nib in Resources */,
 				378638741379D65200427C1B /* GradeLedger-Doc.icns in Resources */,
 				378638751379D65200427C1B /* GradeLedger.icns in Resources */,
-				378638841379D65200427C1B /* GRLEmailTemplate.plist in Resources */,
-				37819570137A286B004B852E /* User's Guide.rtf in Resources */,
-				37819573137A2907004B852E /* Read Me.rtf in Resources */,
+				3718CD44137B37A4001C80C2 /* Read Me.rtf in Resources */,
+				3718CD4D137B3801001C80C2 /* GRLDefaultLetterGrades.plist in Resources */,
+				3718CD51137B3801001C80C2 /* GRLEmailTemplate.plist in Resources */,
+				3718CD54137B3843001C80C2 /* InfoPlist.strings in Resources */,
+				3718CD93137B4014001C80C2 /* User's Guide.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,7 +1139,6 @@
 				378636E21379D50800427C1B /* GRLTextObject.m in Sources */,
 				378636E41379D50800427C1B /* GRLTextView.m in Sources */,
 				378636E51379D50800427C1B /* calcu.c in Sources */,
-				378636E81379D50800427C1B /* DateUtils.m in Sources */,
 				378636EA1379D50800427C1B /* NSColor-Additions.m in Sources */,
 				378636EC1379D50800427C1B /* NSData+Base64.m in Sources */,
 				378636EE1379D50800427C1B /* NSDate+Helper.m in Sources */,
@@ -1157,26 +1161,51 @@
 				3786371C1379D58500427C1B /* DocumentModel.xcdatamodeld in Sources */,
 				37D8BCC11379F01E00C5C48E /* GRLNameTableView.m in Sources */,
 				37536D59137A749A002C9C4B /* JSONKit.m in Sources */,
+				37CEC44A137B040C00D05742 /* DateUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		37819571137A2907004B852E /* Read Me.rtf */ = {
+		3718CD43137B37A4001C80C2 /* Read Me.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				37819572137A2907004B852E /* English */,
+				3718CD45137B37A4001C80C2 /* en */,
 			);
 			name = "Read Me.rtf";
 			sourceTree = "<group>";
 		};
-		378638191379D65100427C1B /* InfoPlist.strings */ = {
+		3718CD4C137B3801001C80C2 /* GRLDefaultLetterGrades.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3786381A1379D65100427C1B /* English */,
+				3718CD57137B3893001C80C2 /* en */,
+			);
+			name = GRLDefaultLetterGrades.plist;
+			sourceTree = "<group>";
+		};
+		3718CD50137B3801001C80C2 /* GRLEmailTemplate.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3718CD56137B387E001C80C2 /* en */,
+			);
+			name = GRLEmailTemplate.plist;
+			sourceTree = "<group>";
+		};
+		3718CD53137B3843001C80C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3718CD55137B3849001C80C2 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3718CD92137B4014001C80C2 /* User's Guide.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3718CD94137B401B001C80C2 /* en */,
+			);
+			name = "User's Guide.rtf";
 			sourceTree = "<group>";
 		};
 		3786381B1379D65100427C1B /* MainMenu.nib */ = {

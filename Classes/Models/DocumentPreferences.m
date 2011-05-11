@@ -10,6 +10,7 @@
 #import "DocumentPreferences.h"
 #import "LetterGradeLookup.h"
 #import "DateUtils.h"
+#import "NSDate+Helper.h"
 
 @interface DocumentPreferences (Private)
 - (NSDictionary *)getDefaultPrefs;
@@ -24,35 +25,30 @@
 @synthesize associatedDocument = _associatedDocument;
 @synthesize defaults = _defaults;
 @synthesize numberOfClassDaysThusFar;
-@synthesize classDaysList = m_classDaysArray;
+@synthesize classDaysList;
 @synthesize scheduleKeys;
 
 - (id) init
 //- (id)initWithDocument:(NSPersistentDocument*)associatedDocument
 {
-	if (!(self = [super init])) return nil;
-	
-	//_associatedDocument = associatedDocument;
-	
-	if (!m_classDaysArray)
-		m_classDaysArray = [[NSMutableArray array] retain];
-
-	
-	// We set up the default settings every time we initialize a document, so we don't save defaults to disk.
-	_defaults = [[self getDefaultPrefs] retain];
-	
-	numberOfClassDaysThusFar = -1;
+	if ((self = [super init])) {
 			
-	scheduleKeys = [[[NSArray alloc] initWithObjects:@"monday", @"tuesday", @"wednesday", @"thursday", @"friday", @"saturday", @"sunday", 
-								@"courseBegin", @"courseEnd", nil] retain];
-	
-	for (NSString *keyPath in scheduleKeys) {
-		[self addObserver:self 
-		  forKeyPath:keyPath 
-			 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
-			 context:nil];
+		classDaysList = [[NSMutableArray array] retain];
+
+		// We set up the default settings every time we initialize a document, so we don't save defaults to disk.
+		_defaults = [[self getDefaultPrefs] retain];
+		
+		numberOfClassDaysThusFar = -1;
+				
+		scheduleKeys = [[[NSArray alloc] initWithObjects:@"monday", @"tuesday", @"wednesday", @"thursday", @"friday", @"saturday", @"sunday", @"courseBegin", @"courseEnd", nil] retain];
+		
+		for (NSString *keyPath in scheduleKeys) {
+			[self addObserver:self 
+			  forKeyPath:keyPath 
+				 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
+				 context:nil];
+		}
 	}
-	
 	return self;
 }
 
@@ -66,7 +62,10 @@
 		[self removeObserver:self forKeyPath:keyPath];
 	}
 	
-	if (scheduleKeys) [scheduleKeys release], scheduleKeys = nil;
+	self.scheduleKeys = nil;
+	self.defaults = nil;
+	self.classDaysList = nil;
+
 	[super dealloc];
 }
 
@@ -321,7 +320,7 @@
 	}
 	NSMutableArray *keys = [[[[self defaults] allKeys] mutableCopy] autorelease];
 	for (NSManagedObject *param in params) {
-		NSString *name = [param valueForKey:@"name" ];
+		NSString *name = [param valueForKey:@"name"];
 		[keys addObject:name];
 	}
 	return keys;
@@ -402,29 +401,6 @@
 	[defPrefs setValue:[NSKeyedArchiver archivedDataWithRootObject:[NSDictionary dictionary]] forKey:@"printerSettings"];	
 	[defPrefs setValue:[NSKeyedArchiver archivedDataWithRootObject:[NSDictionary dictionary]] forKey:@"exportingSettings"];	
 	
-	/*
-	 
-	 // We set up the default settings every time we initialize a document, so we don't save defaults to disk.
-	 
-	 NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-	 [defaults setValue:@"Default Prefs" forKey:@"prefStatus"];
-	 
-	 [defaults setValue:[NSNumber numberWithBool:YES] forKey:@"default1"];
-	 [defaults setValue:[NSNumber numberWithInteger:6] forKey:@"seating_chart_rows"];
-	 [defaults setValue:[NSNumber numberWithInteger:6] forKey:@"seating_chart_cols"];
-	 [defaults setValue:[NSNumber numberWithInteger:6] forKey:@"seating_chart_queue_rows"];
-	 [defaults setValue:[NSNumber numberWithInteger:1] forKey:@"seating_chart_queue_cols"];
-	 
-	 [defaults setValue:[NSArray array] forKey:@"seating_chart_cells"];
-	 [defaults setValue:[NSArray array] forKey:@"seating_chart_queue_cells"];
-	 [defaults setValue:[GRLLetterGradeDS defaultLetterGradeArray] forKey:@"letter_grades"];
-	 
-	 [defaults setValue:[NSMutableDictionary dictionary] forKey:@"preferences"];
-	 [_preferences setDefaults:defaults];
-	 //END:setDefaults
-	 */	
-	
-	
 	return defPrefs;
 }
 //END:getDefaultPrefs
@@ -502,19 +478,27 @@
 
 
 - (IBAction)resetAllClassDays:(id)sender {
-	if (m_classDaysArray) {
-		[m_classDaysArray removeAllObjects];
+	if (classDaysList && [classDaysList count]) {
+		[self.classDaysList removeAllObjects];
 	}
 	[self determineClassDays];		// build a new list of class days
 
 	[self resetNumberOfClassDaysThusFar];
 }
 
+- (NSInteger)numberOfClassDays {
+	NSInteger count = 0;
+	if (classDaysList) {
+		count = [self.classDaysList count];
+	}
+	return count;
+}
 
 - (NSInteger)numberOfClassDaysThusFar {
-	if (m_classDaysArray && [m_classDaysArray count] == 0)
+	if (classDaysList && [classDaysList count] == 0) {
 		[self determineClassDays];
-	
+		numberOfClassDaysThusFar = -1;	// to force a reset
+	}
 	if (numberOfClassDaysThusFar < 0) {
 		[self resetNumberOfClassDaysThusFar];
 	}
@@ -525,28 +509,28 @@
 // get the number of class days thus far
 - (void)resetNumberOfClassDaysThusFar {
 	
-	if (!m_classDaysArray || [m_classDaysArray count] == 0) {
+	if (!classDaysList || [classDaysList count] == 0) {
 		NSLog(@"determineClassDaysThusFar broken, something was nil");
 		return;
 	}
 
 	NSInteger numDays = 0;
 	NSDate *today = [DateUtils today];
-	NSDate *begin = [m_classDaysArray objectAtIndex:0];
-	NSDate *end = [m_classDaysArray lastObject];
+	NSDate *begin = [self.classDaysList objectAtIndex:0];
+	NSDate *end = [classDaysList lastObject];
 	
-	if ([DateUtils isEarlier:today thanDate:begin])		// today is set before the first day of class
+	if ([today isEarlierThanDate:begin])		// today is set before the first day of class
 		numDays = 0;										
-	else if ([DateUtils isEarlier:end thanDate:today])	// today is after the semester's over, return the total class schedule
-		numDays = [m_classDaysArray count];			
-	else {														// the date is within our schedule, so start counting.
+	else if ([end isEarlierThanDate:today])	// today is after the semester's over, return the total class schedule
+		numDays = [classDaysList count];			
+	else {		// today is somewhere within our schedule, so start counting.
 #if		EXCLUDE_ATTENDANCE == EXCLUDE_REDUCE_NUMBER_OF_CLASSES
 		NSSet *excludedClassDays = [NSKeyedUnarchiver unarchiveObjectWithData:[self valueForKey:@"excludedClassDays"]];
 		if (!excludedClassDays) excludedClassDays = [NSSet set];
 #endif		
-		for(NSDate *aDay in m_classDaysArray)
+		for(NSDate *aDay in classDaysList)
 		{
-			if ([DateUtils isEarlier:[m_classDaysArray lastObject] thanDate:aDay])
+			if ([today isEarlierThanDate:aDay])
 				break;											// stop!!! we've gone far enough!!!
 
 #if		EXCLUDE_ATTENDANCE == EXCLUDE_REDUCE_NUMBER_OF_CLASSES
@@ -556,20 +540,22 @@
 		}	
 	}
 	if (numDays != numberOfClassDaysThusFar) {
-		[self willChangeValueForKey:@"numberofClassDaysThusFar"];
+		[self willChangeValueForKey:@"numberOfClassDaysThusFar"];
 		numberOfClassDaysThusFar = numDays;
-		[self didChangeValueForKey:@"numberofClassDaysThusFar"];
+		[self didChangeValueForKey:@"numberOfClassDaysThusFar"];
 	}
 }
 
 - (void)determineClassDays {
-	if (!m_classDaysArray)
+	if (!self.classDaysList) {
 		return NSLog(@"determineClassDays broken, something was nil");
+	}
 	
 	NSDate *aDay = [self valueForKey:@"courseBegin"];
 	
+	[self willChangeValueForKey:@"numberOfClassDays"];
 	[self willChangeValueForKey:@"classDaysList"];
-	while([DateUtils isEarlier:aDay thanDate:[self valueForKey:@"courseEnd"]]) // if we've reached the last day in the period, stop the loop
+	while([aDay isEarlierThanDate:[self valueForKey:@"courseEnd"]]) // if we've reached the last day in the period, stop the loop
 	{
 		// Checks to see if our day falls on a class day...
 		//NSInteger dayOfWeek = [DateUtils dayOfWeekForDate:aDay];
@@ -577,13 +563,15 @@
 		
 		// This is a cute trick ... we get a en_US style string for our date, then use that as a lookup key for our schedule weekday preferences, to see if it's a good class day.
 		if ([[self valueForKey:[[aDay localWeekdayString] lowercaseString]] boolValue])
-			[m_classDaysArray addObject:aDay];
+			[classDaysList addObject:aDay];
 			//[m_classDaysArray addObject:[DateUtils roundOffTimeFromDate:aDay]]; // probably unnecessary
 		
 		// Now we advance one day in the period
 		aDay = [DateUtils setDaysFromDate:aDay numDays:1];
 	}	
 	[self didChangeValueForKey:@"classDaysList"];
+	[self didChangeValueForKey:@"numberOfClassDays"];
+
 }
 
 - (IBAction)validateCourseBegin {

@@ -8,6 +8,7 @@
 
 #import "ScoreHeaderViewController.h"
 #import "DateUtils.h"
+#import "NSDate+Helper.h"
 
 #import "GRLDatabase.h"
 #import "AssignmentObj.h"
@@ -16,13 +17,6 @@
 #import "VerticalTextCell.h"
 
 @implementation ScoreHeaderViewController
-
-- (id)init
-{
-	if((self = [super init])) {
-	}
-	return self;
-}
 
 
 - (void)dealloc
@@ -38,8 +32,9 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
 	NSArray *cols = [self.database.assignmentController arrangedObjects];
 
-	if ([cols count] != [self.headerTableView numberOfColumns])
+	if ([cols count] != [self.headerTableView numberOfColumns]) {
 		[self reloadTableData];
+	}
 	
 	return 1;
 }
@@ -50,19 +45,20 @@
 	while ([self.headerTableView numberOfColumns] > 0)
 		[self.headerTableView removeTableColumn:[[self.headerTableView tableColumns] objectAtIndex:0]];
 	
-	NSArray *cols = [self.database.assignmentController arrangedObjects];
-	for (AssignmentObj *ass in cols)// database allAssignmentsSortedByDueDate])
-	{
-		NSTableColumn *col = [[[NSTableColumn alloc] initWithIdentifier:[ass objectID]] autorelease];
-		[col setWidth:30];
-		[col setMinWidth:30];
-		[col setMaxWidth:30];
-		
-		[self.headerTableView addTableColumn:col];
+	if (self.database && database.assignmentController) {
+		NSArray *cols = [database.assignmentController arrangedObjects];
+		for (AssignmentObj *ass in cols)// database allAssignmentsSortedByDueDate])
+		{
+			NSTableColumn *col = [[[NSTableColumn alloc] initWithIdentifier:[ass objectID]] autorelease];
+			[col setWidth:30];
+			[col setMinWidth:30];
+			[col setMaxWidth:30];
+			
+			[self.headerTableView addTableColumn:col];
+		}
 	}
-	
 	[self.headerTableView setRefusesFirstResponder:YES];
-	[self.headerTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
+	[headerTableView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleNone];
 	
 	// do we need to do this?
 	//[self.headerTableView reloadData];  //GREG REVERSE CHANGE???
@@ -72,11 +68,11 @@
 	NSMutableString *str = [[[NSMutableString alloc] init] autorelease];
 	
 	id assCode = [aTableColumn identifier];
-	AssignmentObj * ass = (AssignmentObj *)[[database managedObjectContext] objectWithID:assCode];
+	AssignmentObj * ass = (AssignmentObj *)[[self.database managedObjectContext] objectWithID:assCode];
 	if (ass) {		
 		[str appendFormat:@"%@: %@ pts", ass.name, ass.maxPoints];
 		if (ass.dueDate) {
-			[str appendFormat:@"\nDue: %@", [DateUtils stringFromDate:ass.dueDate withFormat:kGRLDateShortFormat]];
+			[str appendFormat:@"\nDue: %@", [ass.dueDate stringWithFormat:kGRLDateShortFormat]];
 		}
 	}
 	return str;
@@ -86,7 +82,7 @@
 - (NSString *)tableView:(NSTableView *)tableView toolTipForCell:(NSCell *)cell rect:(NSRectPointer)rect tableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row mouseLocation:(NSPoint)mouseLocation {
 	NSString *tooltipStr = nil;
 	id assCode = [tableColumn identifier];
-	AssignmentObj * ass = (AssignmentObj *)[[database managedObjectContext] objectWithID:assCode];
+	AssignmentObj * ass = (AssignmentObj *)[[self.database managedObjectContext] objectWithID:assCode];
 	if (ass) {		
 		tooltipStr = [NSString stringWithFormat:@"Category: %@ (%@%%)", ass.category.name, ass.category.percentOfFinalScore];
 	}
@@ -116,7 +112,7 @@
 	[cell setControlSize:NSSmallControlSize];
 	[cell setBordered:NO];
 	
-	AssignmentObj * ass = (AssignmentObj *)[[database managedObjectContext] objectWithID:[aTableColumn identifier]];
+	AssignmentObj * ass = (AssignmentObj *)[[self.database managedObjectContext] objectWithID:[aTableColumn identifier]];
 	[cell setRepresentedObject:ass];
 	
 	//NSFont *smallFont = [NSFont fontWithName:@"Lucida Grande" size:10];
@@ -130,6 +126,5 @@
 
 
 @synthesize headerTableView;
-@synthesize toolTipArray;
 @synthesize database;
 @end

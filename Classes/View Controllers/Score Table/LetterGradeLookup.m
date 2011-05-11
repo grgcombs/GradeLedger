@@ -14,8 +14,7 @@
 
 - (id)init
 {
-    self = [super init];
-    if(self)
+    if((self = [super init]))
     {
 		[NSValueTransformer setValueTransformer:self forName:@"LetterGradeLookup"];
 
@@ -27,16 +26,34 @@
 {
 	[super dealloc];
 }
+
 - (void) awakeFromNib {
-	[super awakeFromNib];	
-	[letterGradeController setSortDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"low" ascending:NO]]];
-	[letterGradeController rearrangeObjects];
+	[super awakeFromNib];
+	if (letterGradeController) {
+		NSSortDescriptor *lowSort = [NSSortDescriptor sortDescriptorWithKey:@"low" ascending:NO];
+		[letterGradeController setSortDescriptors:[NSArray arrayWithObject:lowSort]];
+		[letterGradeController rearrangeObjects];
+	}
+	else {
+		NSLog(@"Letter Grade Lookup ... nib isn't really loaded?");
+	}
 }
 
 
 + (NSMutableArray *)defaultLetterGradeArray {
-	NSMutableArray *anArray = [[NSMutableArray alloc] init];
+	NSMutableArray *anArray = nil;
+	NSString *defGradeFile = [[NSBundle mainBundle] pathForResource:@"GRLDefaultLetterGrades" ofType:@"plist"];
+	if (defGradeFile) {
+		anArray = [[[NSMutableArray alloc] initWithContentsOfFile:defGradeFile] autorelease]; 
+	}
 	
+	if (!anArray) {
+		NSLog(@"Error loading default letter grades from file: %@", defGradeFile);
+	}
+	
+	return anArray;
+	
+	/*
 	[anArray addObject: [NSMutableDictionary dictionaryWithObjects: [NSArray arrayWithObjects:@"A+", 
 																	 [NSNumber numberWithDouble:96.67], kCFNumberPositiveInfinity, 
 																	 nil] forKeys: [NSArray arrayWithObjects:@"grade", @"low", @"hi", nil]]];
@@ -90,7 +107,7 @@
 																	 nil] forKeys: [NSArray arrayWithObjects:@"grade", @"low", @"hi", nil]]];
 	
 	[anArray autorelease];
-	return anArray;
+	return anArray;*/
 }
 
 

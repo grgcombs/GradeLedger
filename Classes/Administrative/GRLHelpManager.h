@@ -14,5 +14,5 @@
 
 - (IBAction)menuItemAction:(id)sender;
 
-@property (retain) NSTextView *helpView;
+@property (nonatomic, assign) NSTextView *helpView;
 @end

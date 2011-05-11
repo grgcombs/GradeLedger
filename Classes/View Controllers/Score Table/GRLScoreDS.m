@@ -39,64 +39,56 @@
 
 - (id)init
 {
-    self = [super init];
-    if(self)
+    if((self = [super init]))
     {
 		// we assume the attendance assignment is the first column if it's not set properly elsewhere.
 		self.attendanceColumn = 0;	
+		initialized = NO;
     }
     return self;
 }
 
 - (void)dealloc
-{
-	// REMOVE ALL TABLE COLUMNS, WITHOUT ITERATING THROUGH THE TABLE, PER SE.
-	while ([self.sheetTable numberOfColumns] > 0)
-		[self.sheetTable removeTableColumn:[[self.sheetTable tableColumns] objectAtIndex:0]];
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	
-	for (NSString *key in self.scheduleObservations)
-		[self.prefs removeObserver:self forKeyPath:key];
-	
-	self.scheduleObservations = nil;
-
+{	
 	[self.data.studentController removeObserver:self forKeyPath:@"arrangedObjects.keyByWhichObjectsAreArranged"];
 	
-	//if (self.data) self.data = nil;
+	for (NSString *key in self.scheduleObservations) {
+		[self.prefs removeObserver:self forKeyPath:key];
+	}
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+
+	self.scheduleObservations = nil;
+
 	[super dealloc];
 }
 
 - (void) awakeFromNib
-{
-	// REMOVE ALL TABLE COLUMNS, WITHOUT ITERATING THROUGH THE TABLE, PER SE.
-	while ([self.sheetTable numberOfColumns] > 0)
-		[self.sheetTable removeTableColumn:[[self.sheetTable tableColumns] objectAtIndex:0]];
-		
-	//self.data = base;
-    
+{    
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addTableColumn:) 
 												 name:@"GRLAssignmentCreated" object:self.data];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeTableColumn:) 
-												 name:@"GRLAssignmentRemoved" object:self.data];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resizeAssViewToFit) 
+												 name:@"GRLAssignmentRemoved" object:data];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resizeAssViewToFit:) 
 												 name:NSWindowDidResizeNotification object:[self.sheetTable window]];	
 	
 	// listen to see whenever someone changes the attendance record for a student
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(attendanceChanged:) name:@"AttendanceChanged" object:self.data];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(attendanceChanged:) name:@"AttendanceChanged" object:data];
 	
 	NSArray *specialKeys = [NSArray arrayWithObjects:@"tardyPenalty", @"absentPenalty", @"latePenalty", @"tardiesForAbsence", @"excludedClassDays",nil];
 	self.scheduleObservations = [specialKeys arrayByAddingObjectsFromArray:[self.prefs scheduleKeys]];
-	for (NSString *key in self.scheduleObservations)
+	for (NSString *key in self.scheduleObservations) {
 		[self.prefs addObserver:self
-						   forKeyPath:key options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:[self.data managedObjectContext]];
+						   forKeyPath:key options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:[data managedObjectContext]];
+	}
 	
 	// watch to see if they change the sorting on the student list
-	[self.data.studentController addObserver:self forKeyPath:@"arrangedObjects.keyByWhichObjectsAreArranged" options:0 context:[self.data managedObjectContext]];
+	[self.data.studentController addObserver:self forKeyPath:@"arrangedObjects.keyByWhichObjectsAreArranged" options:0 context:[data managedObjectContext]];
 	
 	//[self.attendanceDS refreshCalendar:self];
 	[self refreshFinalScores:self]; // do this initially.
 	[self reloadTableData];
+	
+	initialized = YES;
 }
 
 // Key-Value Observations ... we're listening to see if we need to reload our grade data.
@@ -111,9 +103,10 @@
 	else if ([object isKindOfClass:[NSArrayController class]]) {
 		[self reloadTableData];
 	}
-	else
+	else {
 		// be sure to call the super implementation if the superclass implements it
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
 }
 
 
@@ -122,24 +115,30 @@
 
 - (void)reloadTableData
 {	
-	[self resizeAssViewToFit];
+	[self resizeAssViewToFit:nil];
 	[self.sheetTable reloadData];
 	[self.nameTable reloadData];	
 	//[self.sheetTable setNeedsDisplay:YES];
 	//[self.nameTable setNeedsDisplay:YES];	
 }
 
-- (void)resizeAssViewToFit
+- (void)resizeAssViewToFit:(NSNotification*)notif
 {
-	NSTableView *headerView = [headerTableDS headerTableView];
-	NSRect rect = [sheetTable frame];
-	NSRect assRect = [headerView frame];		
-	CGFloat width = fmax(NSWidth(rect),NSWidth([[headerView superview] frame]));
-    
-	[headerView setFrame:NSMakeRect(NSMinX(rect),NSMinY(assRect),width,NSHeight(assRect))];
-	//[headerView setRowHeight:NSHeight([[headerView superview ]frame])];
-	//[headerView setNeedsDisplay:YES];
-	[headerView reloadData];
+	if (initialized) { // don't know if this check is still necessary .. was useful for debugging...
+		if (self.headerTableDS) {
+			NSTableView *headerView = [headerTableDS headerTableView];
+			if (headerView) {
+				NSRect rect = [sheetTable frame];
+				NSRect assRect = [headerView frame];		
+				CGFloat width = fmax(NSWidth(rect),NSWidth([[headerView superview] frame]));
+			
+				[headerView setFrame:NSMakeRect(NSMinX(rect),NSMinY(assRect),width,NSHeight(assRect))];
+				//[headerView setRowHeight:NSHeight([[headerView superview ]frame])];
+				//[headerView setNeedsDisplay:YES];
+				[headerView reloadData];
+			}
+		}
+	}
 }
 
 
@@ -164,18 +163,22 @@
 #pragma mark Final Grade
 - (void)refreshFinalScores:(id)sender
 {    
-    if (!self.data || !self.data.studentController) {
-		NSLog(@"ERROR: ScoreDS-calculateFinalScores -- No database object and/or student array.");
-		return;
+    if (self.data && data.studentController) {
+		for(StudentObj *stud in [data.studentController arrangedObjects]) {
+			[stud refreshGradeTotal:self];
+		}
 	}
-	for(StudentObj *stud in [self.data.studentController arrangedObjects])
-		[stud refreshGradeTotal:self];
+	else {
+		NSLog(@"ERROR: ScoreDS-calculateFinalScores -- No database object and/or student array.");
+	}
+
 }
 
 
 // Use this when you don't already have a Cell (for it's representedObject) or can't get to it easily.
 - (ScoreObj *)scoreObjForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
 	ScoreObj *score = nil;
+	BOOL didError = NO;
 	
 	id colID = [aTableColumn identifier];
 	@try {
@@ -186,12 +189,18 @@
 			score = [stud scoreForAssignment:ass];
 		}
 		else {
-			NSLog(@"Error in ScoreDS:scoreObjForTableColumn - Row: %ld - Col: %ld - ColumnID: %@  ", rowIndex, [self.sheetTable columnWithIdentifier:colID], colID);
+			didError = YES;
 		}
 	}
 	@catch (NSException * e) {
-		NSLog(@"Error in ScoreDS:scoreObjForTableColumn - Row: %ld - Col: %ld - ColumnID: %@  ", rowIndex, [self.sheetTable columnWithIdentifier:colID], colID);
+		didError = YES;
 	}
+	@finally {
+		if (didError) {
+			NSLog(@"Error in ScoreDS:scoreObjForTableColumn - Row: %ld - Col: %ld - ColumnID: %@  ", rowIndex, [self.sheetTable columnWithIdentifier:colID], colID);
+		}
+	}
+
 	return score;
 }
 
@@ -281,8 +290,9 @@
 		else
 			score.score = [NSNumber numberWithInteger:NSNotFound];
 		
-		if(!score.collectionDate && ![anObject isEqualToString:@""])
+		if(!score.collectionDate && ![anObject isEqualToString:@""]) {
 			score.collectionDate = [DateUtils today];
+		}
 		
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"GRLDocumentEdited" object:data];
 		
@@ -319,15 +329,15 @@
 
 - (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
-	if(aTableView != (NSTableView *)self.sheetTable || rowIndex < 0)
+	if(rowIndex < 0 || !aTableView || (NO == [aTableView isEqual:self.sheetTable]))
 		return;
 	
 	ScoreObj *score = [aCell representedObject];
-	if (!score) // sometimes we don't get a represented object, so lets grab the score manually
+	if (!score) { // sometimes we don't get a represented object, so lets grab the score manually
 		score = [self scoreObjForTableColumn:aTableColumn row:rowIndex];
+	}
 	
     NSColor *color = [score cellColorWithPrefs:self.prefs];
-        
     if(color)
     {
         [aCell setDrawsBackground:YES];
@@ -340,56 +350,57 @@
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
-    if(aTableView != (NSTableView *)self.sheetTable)
+    if(rowIndex < 0 || !aTableView || NO == [aTableView isEqual:self.sheetTable])
 		return NO;
 		
 	NSInteger colIndex = [aTableView columnWithIdentifier:[aTableColumn identifier]];	
+	if(colIndex < 0)
+		return NO;
 	
-	if(rowIndex != -1 && colIndex != -1)
-	{		
-
-		NSCell *aCell = [aTableView preparedCellAtColumn:colIndex row:rowIndex];
-		ScoreObj *score = [aCell representedObject];
-		if (!score) // sometimes we don't get a represented object, so lets grab the score manually
-			score = [self scoreObjForTableColumn:aTableColumn row:rowIndex];
-				
-		AssignmentObj *ass = score.assignment;
-				
-		[data.scoreController setSelectedObjects:[NSArray arrayWithObject:score]];
-		 
-		if ([ass isAttendance]) {
-			return NO; // Attendance is automatically calculated ... no editing allowed...
-		}
-		
-		// Did someone actually set a collection date?		
-		if(score.collectionDate)
-		{
-			NSDate *date = [score.collectionDate beginningOfDay];
-			NSDate *today = [DateUtils today];
-			NSDate * yesterday = [DateUtils yesterday];	// go back 1 day
-			
-			if([date isEqualToDate:today])
-				[dateForAss selectItemAtIndex:0];
-			else if([date isEqualToDate:yesterday])
-				[dateForAss selectItemAtIndex:1];
-			else
-			{
-				NSString *dateString = [DateUtils dateAsHeaderString:date];
-				if([dateForAss indexOfItemWithTitle:dateString] == -1)
-					[dateForAss insertItemWithTitle:dateString atIndex:2];
-				
-				[dateForAss selectItemWithTitle:dateString];
-				[[dateForAss itemAtIndex:2] setTarget:self];
-				[[dateForAss itemAtIndex:2] setAction:@selector(dateChanged:)];
-			}
-			
-		}
-		else	// when entering grades, we default to collecting the assignments "Today"
-			[dateForAss selectItemAtIndex:0]; 
-		
-		[dateForAss setNeedsDisplay:YES];
-				
+	NSCell *aCell = [aTableView preparedCellAtColumn:colIndex row:rowIndex];
+	ScoreObj *score = [aCell representedObject];
+	if (!score) { // sometimes we don't get a represented object, so lets grab the score manually
+		score = [self scoreObjForTableColumn:aTableColumn row:rowIndex];
 	}
+			
+	AssignmentObj *ass = score.assignment;
+			
+	[data.scoreController setSelectedObjects:[NSArray arrayWithObject:score]];
+	 
+	if ([ass isAttendance]) {
+		return NO; // Attendance is automatically calculated ... no editing allowed...
+	}
+	
+	// Did someone actually set a collection date?		
+	if(score.collectionDate)
+	{
+		NSDate *date = [score.collectionDate beginningOfDay];
+		NSDate *today = [DateUtils today];
+		NSDate * yesterday = [DateUtils yesterday];	// go back 1 day
+		
+		if([date isEqualToDate:today]) {
+			[dateForAss selectItemAtIndex:0];
+		}
+		else if([date isEqualToDate:yesterday]) {
+			[dateForAss selectItemAtIndex:1];
+		}
+		else
+		{
+			NSString *dateString = [DateUtils dateAsHeaderString:date];
+			if([dateForAss indexOfItemWithTitle:dateString] == -1) {
+				[dateForAss insertItemWithTitle:dateString atIndex:2];
+			}
+			[dateForAss selectItemWithTitle:dateString];
+			[[dateForAss itemAtIndex:2] setTarget:self];
+			[[dateForAss itemAtIndex:2] setAction:@selector(dateChanged:)];
+		}
+		
+	}
+	else {	// when entering grades, we default to collecting the assignments "Today"
+		[dateForAss selectItemAtIndex:0]; 
+	}
+	
+	[dateForAss setNeedsDisplay:YES];
 	
 	return YES;
 }
@@ -451,8 +462,9 @@
         NSDate *today = [DateUtils today];
         NSDate *yesterday = [DateUtils yesterday];
         
-        if(!date || [date isEqualToDate:today] || [date isEqualToDate:yesterday])
+        if(!date || [date isEqualToDate:today] || [date isEqualToDate:yesterday]) {
             NSBeep();
+		}
         else
         {
             [dateForAss insertItemWithTitle:dateString atIndex:[[dateForAss itemArray] count] - 1];
@@ -484,8 +496,9 @@
 
 - (CGFloat)splitView:(NSSplitView *)sender constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)offset
 {
-    if(proposedMin == 0)
+    if(proposedMin == 0) {
         proposedMin = 174;
+	}
 	return proposedMin;
 }
 

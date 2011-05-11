@@ -9,6 +9,7 @@
 
 #import "GRLPrinter.h"
 #import "DocumentPreferences.h"
+#import "NSDate+Helper.h"
 
 #import "StudentObj.h"
 #import "AssignmentObj.h"
@@ -692,7 +693,7 @@
 		
 		if(opts & 64)
 		{
-			dueDate = [DateUtils stringFromDate:[ass dueDate] withFormat:kGRLDateShortFormat];
+			dueDate = [[ass dueDate] stringWithFormat:kGRLDateShortFormat];
 			len = [[lengthEnum nextObject] integerValue];
 			if(dueDate)
 			{
@@ -706,7 +707,7 @@
 		if(opts & 128)
 		{
 			ScoreObj *score = [stud scoreForAssignment:ass];
-			turnedInDate = [DateUtils stringFromDate:score.collectionDate withFormat:kGRLDateShortFormat];
+			turnedInDate = [score.collectionDate stringWithFormat:kGRLDateShortFormat];
 			len = [[lengthEnum nextObject] integerValue];
 			if(turnedInDate)
 			{

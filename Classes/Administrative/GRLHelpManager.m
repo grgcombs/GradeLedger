@@ -14,8 +14,13 @@
 
 - (IBAction)menuItemAction:(id)sender
 {
-    [helpView readRTFDFromFile:[[NSBundle mainBundle] pathForResource:[sender title] ofType:@"rtf"]];
-    [[helpView window] makeKeyAndOrderFront:nil];
+	if (helpView) {
+		NSString *theFile = [[NSBundle mainBundle] pathForResource:[sender title] ofType:@"rtf"];
+		if (theFile && [theFile length]) {
+			[helpView readRTFDFromFile:theFile];
+			[[helpView window] makeKeyAndOrderFront:nil];
+		}
+	}
 }
 
 @synthesize helpView;

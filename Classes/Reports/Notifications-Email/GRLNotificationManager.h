@@ -15,7 +15,8 @@
     NSMutableArray *notificationArray;
     NSMutableArray *timers;
     NSMutableDictionary *loggedMessages;
-   IBOutlet GRLDatabase *data;
+	
+    IBOutlet GRLDatabase *data;
 	IBOutlet DocumentPreferences *prefs;
     
     IBOutlet NSWindow *logWindow;
@@ -40,9 +41,6 @@
     IBOutlet NSTextField *finalScoreValue;
 	
 }
-
-- (void)setNotificationData:(NSDictionary *)dict;
-- (NSDictionary *)notificationData;
 
 - (void)establishAllTimers;
 - (NSTimer *)establishTimerForNotification:(GRLNotification *)notif;
@@ -69,26 +67,27 @@
 
 - (IBAction)closeLogWindow:(id)sender;
 
-@property (retain) GRLDatabase *data;
-@property (retain) DocumentPreferences *prefs;
+@property (nonatomic, assign) GRLDatabase *data;
+@property (nonatomic, assign) DocumentPreferences *prefs;
 
-@property (retain) NSMutableArray *notificationArray;
-@property (retain) NSMutableArray *timers;
-@property (retain) NSMutableDictionary *loggedMessages;
-@property (retain) NSWindow *logWindow;
-@property (retain) NSOutlineView *logView;
-@property (retain) NSWindow *docWindow;
-@property (retain) NSWindow *notSheet;
-@property (retain) NSTableView *notTable;
-@property (retain) NSWindow *notInfoSheet;
-@property (retain) NSMatrix *notType;
-@property (retain) NSMatrix *notDates;
-@property (retain) NSTextView *notMessage;
-@property (retain) NSPopUpButton *attCode;
-@property (retain) NSTextField *attCount;
-@property (retain) NSTextField *missCount;
-@property (retain) NSPopUpButton *finalScoreAboveBelow;
-@property (retain) NSTextField *finalScoreValue;
-@property (assign) NSDictionary *notificationData;
+@property (nonatomic, assign) NSWindow *logWindow;
+@property (nonatomic, assign) NSOutlineView *logView;
+@property (nonatomic, assign) NSWindow *docWindow;
+@property (nonatomic, assign) NSWindow *notSheet;
+@property (nonatomic, assign) NSTableView *notTable;
+@property (nonatomic, assign) NSWindow *notInfoSheet;
+@property (nonatomic, assign) NSMatrix *notType;
+@property (nonatomic, assign) NSMatrix *notDates;
+@property (nonatomic, assign) NSTextView *notMessage;
+@property (nonatomic, assign) NSPopUpButton *attCode;
+@property (nonatomic, assign) NSTextField *attCount;
+@property (nonatomic, assign) NSTextField *missCount;
+@property (nonatomic, assign) NSPopUpButton *finalScoreAboveBelow;
+@property (nonatomic, assign) NSTextField *finalScoreValue;
+
+@property (nonatomic, copy) NSDictionary *notificationData;
+@property (nonatomic, copy) NSMutableArray *notificationArray;
+@property (nonatomic, copy) NSMutableArray *timers;
+@property (nonatomic, copy) NSMutableDictionary *loggedMessages;
 
 @end

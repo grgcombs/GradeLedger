@@ -25,8 +25,7 @@
  */
 
 -(id)initWithFrame:(NSRect)frame {
-    [super initWithFrame:frame];
-    if ( self ) {
+    if (( [super initWithFrame:frame] )) {
 		// TODO: I should probably include the "init" code from "commonInitWithCoder" here
     }
     return self;
@@ -43,8 +42,7 @@
     gridCalculated = NO;
     respondsToWillDisplayCell = NO;
 
-    self = [super initWithCoder:decoder];
-    if ( self )
+    if ( (self = [super initWithCoder:decoder]) )
         {
         // Now set the cells in all the columns to wrap text
         NSInteger i = 0;
@@ -59,14 +57,16 @@
 			if (rowHeights) { [rowHeights release]; rowHeights = nil; }
 			if (rowOrigins) { [rowOrigins release]; rowOrigins = nil; }
         }
-    return [self autorelease];
+    return self;
 }
 
 // Properly release all instance variables
 - (void) dealloc
 {
-	if (rowHeights) { [rowHeights release]; rowHeights = nil; }
-	if (rowOrigins) { [rowOrigins release]; rowOrigins = nil; }
+	if (rowHeights)
+		[rowHeights release], rowHeights = nil;
+	if (rowOrigins)
+		[rowOrigins release], rowOrigins = nil;
 
     [super dealloc];
 }

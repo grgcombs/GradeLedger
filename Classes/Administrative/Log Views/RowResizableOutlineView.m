@@ -32,10 +32,8 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    self = [self commonInitWithCoder: decoder];
-
     // The only difference between RowResizableTableView and OutlineView is a few extra notifications
-    if ( self )
+    if ( (self = [self commonInitWithCoder: decoder]) )
         {
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(itemExpandedOrCollapsed:)
@@ -52,8 +50,9 @@
                                                      name:@"NSOutlineViewColumnDidResizeNotification"
                                                    object:self];
         }
-    return [self retain];
+    return self;
 }
+
 
 // Override frameOfCell so we can substitute our custom row rectangles
 - (NSRect)frameOfCellAtColumn:(NSInteger)column row:(NSInteger)row
@@ -117,8 +116,6 @@
     //[self recalculateGrid];
 }
 
-@synthesize rowHeights;
-@synthesize rowOrigins;
 @synthesize gridCalculated;
 @synthesize respondsToWillDisplayCell;
 @end

@@ -30,8 +30,6 @@
 // Gross hack to allow code sharing between RowResizable*Views
 #define ROW_RESIZABLE_WILL_DISPLAY_CELL_SELECTOR @selector(outlineView:willDisplayCell:forTableColumn:item:)
 
-@property (retain) NSMutableArray* rowHeights;
-@property (retain) NSMutableArray* rowOrigins;
 @property BOOL gridCalculated;
 @property BOOL respondsToWillDisplayCell;
 @end

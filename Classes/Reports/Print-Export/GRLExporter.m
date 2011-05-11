@@ -8,6 +8,8 @@
 //
 
 #import "GRLExporter.h"
+#import "NSDate+Helper.h"
+
 #import "DocumentPreferences.h"
 #import "NSColor-Additions.h"
 #import "StudentObj.h"
@@ -703,7 +705,7 @@
 		
 		if(opts & 64)
 		{
-			dueDate = [DateUtils stringFromDate:[ass dueDate] withFormat:kGRLDateShortFormat];
+			dueDate = [[ass dueDate] stringWithFormat:kGRLDateShortFormat];
 			if(!dueDate)
 				dueDate = @"";
 			[str appendFormat:@"\t\t<td>%@</td>\n",dueDate];
@@ -712,7 +714,7 @@
 		if(opts & 128)
 		{
 			ScoreObj *score = [stud scoreForAssignment:ass];
-			turnedInDate = [DateUtils stringFromDate:score.collectionDate withFormat:kGRLDateShortFormat];
+			turnedInDate = [score.collectionDate stringWithFormat:kGRLDateShortFormat];
 			if(!turnedInDate)
 				turnedInDate = @"";
 			[str appendFormat:@"\t\t<td>%@</td>\n",turnedInDate];

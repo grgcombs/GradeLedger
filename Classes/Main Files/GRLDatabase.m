@@ -8,6 +8,8 @@
 //
 
 #import "GRLDatabase.h"
+#import "GRLDocument.h"
+
 #import "DocumentPreferences.h"
 #import "GRLDefines.h"
 #import "CategoryObj.h"
@@ -22,7 +24,6 @@
 @synthesize studentController;
 @synthesize studAttribController;
 @synthesize scoreController;
-@synthesize managedObjectContext;
 @synthesize sortByStudentNameDesc, sortByNameDesc, sortByDueDateDesc, sortByAttendDateDesc;
 @synthesize preferences;
 @synthesize _associatedDocument;
@@ -43,7 +44,6 @@
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	
-	self.managedObjectContext = [_associatedDocument managedObjectContext];
 	
 	[studentController setSortDescriptors:self.sortByStudentNameDesc];
 	[categoryController setSortDescriptors:self.sortByNameDesc];
@@ -61,7 +61,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self 
 											 selector:@selector(objectsDidChange:) 
 												 name:NSManagedObjectContextObjectsDidChangeNotification 
-											   object:[self managedObjectContext]];		
+											   object:_associatedDocument.manObjContext];		
 }
 - (void)dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -72,6 +72,10 @@
 	self.sortByAttendDateDesc = nil;
 	
 	[super dealloc];
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+	return _associatedDocument.manObjContext;
 }
 
 - (BOOL) hasExistingAttendanceCat {
@@ -142,7 +146,7 @@
 	for (AssignmentObj *ass in asses) {
 		if (!ass.category || [[NSNull null] isEqual:ass.category]) {
 			[self.assignmentController removeObject:ass];
-				//[[self managedObjectContext] deleteObject:ass];
+				//[_associatedDocument.manObjContext deleteObject:ass];
 		}
 	}
 	/*
@@ -161,9 +165,9 @@
 - (void)objectsDidChange:(NSNotification *)note
 {
 			
-    NSSet *insertedObjects = [[self managedObjectContext] insertedObjects];
-    NSSet *updatedObjects  = [[self managedObjectContext] updatedObjects];
-    NSSet *deletedObjects  = [[self managedObjectContext] deletedObjects];
+    NSSet *insertedObjects = [_associatedDocument.manObjContext insertedObjects];
+    NSSet *updatedObjects  = [_associatedDocument.manObjContext updatedObjects];
+    NSSet *deletedObjects  = [_associatedDocument.manObjContext deletedObjects];
 	BOOL arrangedAssignments = NO;
 	BOOL arrangedStudents = NO;
 	BOOL arrangedCategories = NO;

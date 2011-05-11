@@ -41,7 +41,6 @@
 
 @end
 
-
 @implementation GRLDocument
 
 NSString *StudentsPBoardType =		@"StudentsPBoardType";
@@ -57,9 +56,9 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 {
     if (!(self = [super init])) return nil;
 		
-	if (![self hasUndoManager])
+	if (![self hasUndoManager]) {
 		[self setUndoManager:[[self managedObjectContext] undoManager]];
-		
+	}
 	docWindow = nil;
 	
 	[[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
@@ -78,6 +77,10 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 - (NSString *)windowNibName
 {
     return NSStringFromClass([self class]);
+}
+
+- (NSManagedObjectContext *)manObjContext {
+	return [self managedObjectContext];
 }
 
 // HANDLE COPY AND PASTE IN VARIOUS TAB VIEWS (RIGHT NOW JUST STUDENT VIEW)
@@ -149,7 +152,6 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 			return;
 		}
 		NSManagedObjectContext *moc = [self managedObjectContext];
-		
 		for (StudentObj *student in selectedStudents) {
 			[moc deleteObject:student];
 		}
@@ -167,9 +169,9 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 
 	docWindow = [[aController window] retain];
 	
-	if (![self managedObjectContext]) 
+	if (![self managedObjectContext]) {
 		NSLog(@"%@:%s Core Data Context is nil", [self class], (char *)_cmd);
-	
+	}
 	
 	/*
 	 ****** For Testing Purposes: This deletes all our saved preferences from the document ********
@@ -180,7 +182,8 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 	}
 	*/
 	
-	
+	NSLog(@"%@", [self.managedObjectContext description]);
+
 	//******************** START:READING NEW PREFERENCES	 
 	
 	NSString *password = [[self preferences] valueForKey:@"password"];
@@ -201,7 +204,7 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 	
 	//********************* END:READING NEW PREFERENCES
 
-	[self performSelector:@selector(finalizeShit:) withObject:nil afterDelay:2];
+	[self performSelector:@selector(finalizeShit:) withObject:nil afterDelay:0];
 		
 }
 
@@ -284,12 +287,13 @@ NSString *ScoresPBoardType =		@"ScoresPBoardType";
 		return;
 	
 	NSArray *studsList = [jsonString objectFromJSONString];
-	if (studsList && [studsList count]) {
+	NSManagedObjectContext *moc = [self managedObjectContext];
+	if (moc && studsList && [studsList count]) {
 		for (NSDictionary *studDict in studsList) {
-			StudentObj *student = [StudentObj insertNewStudentWithContext:[self managedObjectContext]];
+			StudentObj *student = [StudentObj insertNewStudentWithContext:moc];
 			[student setValuesForKeysWithDictionary:studDict];
 		}
-		//[[self managedObjectContext] save:nil];
+		//[moc save:nil];
 	}
 }
 

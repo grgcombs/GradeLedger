@@ -12,17 +12,13 @@
 @interface ScoreHeaderViewController : NSObject <NSTableViewDataSource>
 {
 	IBOutlet NSTableView *headerTableView;
-	//IBOutlet SpreadsheetTableView *mainTableView;
 	IBOutlet GRLDatabase *database;
-    NSMutableArray *toolTipArray;
 }
 
 - (IBAction) reloadTableData;
 
 
-@property (retain) NSMutableArray *toolTipArray;
-@property (retain) GRLDatabase *database;
-//@property (retain) SpreadsheetTableView *mainTableView;
-@property (retain) NSTableView *headerTableView;
+@property (nonatomic, assign) GRLDatabase *database;
+@property (nonatomic, assign) NSTableView *headerTableView;
 
 @end

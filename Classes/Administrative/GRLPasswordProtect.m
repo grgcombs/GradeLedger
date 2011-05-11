@@ -15,21 +15,17 @@
 - (id)init
 {
     self = [super init];
-    if(self)
-        password = nil;
+    if(self) {
+        m_password = nil;
+	}
     return self;
 }
 
 - (void)dealloc
 {
-    [password autorelease];
-    [super dealloc];
-}
+	self.password = nil;
 
-- (void)setPassword:(NSString *)pwd
-{
-    [password autorelease];
-    password = [pwd retain];
+    [super dealloc];
 }
 
 - (BOOL)checkIfPasswordIsValid
@@ -46,7 +42,7 @@
     [newPassword setStringValue:@""];
     [newPasswordAgain setStringValue:@""];
 
-    [oldPassword setEnabled:(password != nil)];
+    [oldPassword setEnabled:(m_password != nil)];
     
     [NSApp beginSheet:passwordSheet
            modalForWindow:docWindow
@@ -61,17 +57,17 @@
     
     if(res == NSOKButton)
     {
-        [password autorelease];
-        password = [[newPassword stringValue] retain];
-        return password;
+        self.password = [newPassword stringValue];
+        return m_password;
     }
-    else
+    else {
         return nil;
+	}
 }
 
 - (IBAction)confirmPassword:(id)sender
 {
-    if(password != nil && ![[oldPassword stringValue] isEqualToString:password])
+    if(m_password != nil && ![[oldPassword stringValue] isEqualToString:m_password])
     {
         //error
         NSRunAlertPanel(@"Password Error",
@@ -114,7 +110,7 @@
 
 - (IBAction)checkPassword:(id)sender
 {
-    if(![[passwordGetterField stringValue] isEqualToString:password])
+    if(![[passwordGetterField stringValue] isEqualToString:m_password])
     {
         NSRunAlertPanel(@"Password Error",
                         @"The password you entered is not valid.",
@@ -133,6 +129,7 @@
 }
 
 
+@synthesize password = m_password;
 @synthesize docWindow;
 @synthesize passwordSheet;
 @synthesize oldPassword;

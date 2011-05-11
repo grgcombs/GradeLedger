@@ -9,6 +9,7 @@
 
 #import "GRLNotificationManager.h"
 #import "Mail.h"
+#import "NSDate+Helper.h"
 
 #import "GRLAttendanceCodeEvent.h"
 #import "GRLMissingAssignmentEvent.h"
@@ -24,9 +25,9 @@
 {
     if((self = [super init]))
     {
-        self.notificationArray = [NSMutableArray array];
-        self.timers = [NSMutableArray array];
-        self.loggedMessages = [NSMutableDictionary dictionary];
+        notificationArray = [[NSMutableArray alloc] init];
+        timers = [[NSMutableArray alloc] init];
+        loggedMessages = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -34,14 +35,12 @@
 - (void)dealloc
 {
     NSEnumerator *timerEnum = [timers objectEnumerator];
-    NSTimer *timer;
-    
+    NSTimer *timer = nil;
     while((timer = [timerEnum nextObject]))
     {
-        if([timer isValid])
+        if([timer isValid]) {
             [timer invalidate];
-            
-        [timers removeObjectAtIndex:0];
+		}
     }
 
     self.notificationArray = nil;
@@ -67,14 +66,16 @@
 
 - (void)setNotificationData:(NSDictionary *)dict
 {
-    if([dict objectForKey:@"notificationArray"])
+	NSArray *tempArray = [dict objectForKey:@"notificationArray"];
+    if(tempArray)
     {
-        self.notificationArray = [NSMutableArray arrayWithArray:[dict objectForKey:@"notificationArray"]];
+        self.notificationArray = [NSMutableArray arrayWithArray:tempArray];
     }
     
-    if([dict objectForKey:@"loggedMessages"])
+	NSDictionary *tempDict = [dict objectForKey:@"loggedMessages"];
+    if(tempDict)
     {
-        self.loggedMessages = [NSMutableDictionary dictionaryWithDictionary:[dict objectForKey:@"loggedMessages"]];
+        self.loggedMessages = [NSMutableDictionary dictionaryWithDictionary:tempDict];
     }
     
     [self establishAllTimers];
@@ -90,8 +91,10 @@
 {
     GRLNotification *notif;
     
-    for(notif in notificationArray)
-        [timers addObject:[self establishTimerForNotification:notif]];
+    for(notif in notificationArray) {
+		NSTimer *timer = [self establishTimerForNotification:notif];
+        [timers addObject:timer];
+	}
 }
 
 - (NSTimer *)establishTimerForNotification:(GRLNotification *)notif
@@ -107,11 +110,8 @@
 
 - (void)showNotifications
 {
-    [NSApp beginSheet:notSheet
-           modalForWindow:docWindow
-           modalDelegate:nil
-           didEndSelector:nil
-           contextInfo:nil];
+    [NSApp beginSheet:notSheet modalForWindow:docWindow
+		modalDelegate:nil didEndSelector:nil contextInfo:nil];
 }
 
 - (IBAction)dismissNotifications:(id)sender
@@ -122,12 +122,13 @@
 
 - (void)checkTimer:(NSTimer *)timer
 {
-    GRLNotification *not = [timer userInfo];
-    int index = [timers indexOfObject:timer];
-    
-    [not checkNotificationFiring:self.data];
-    
-    [timers replaceObjectAtIndex:index withObject:[self establishTimerForNotification:not]];
+	if (timer) {
+		GRLNotification *not = [timer userInfo];
+		NSInteger index = [timers indexOfObject:timer];
+		
+		[not checkNotificationFiring:self.data];
+		[timers replaceObjectAtIndex:index withObject:[self establishTimerForNotification:not]];
+	}
 }
 
 - (void)notificationFiring:(NSNotification *)notification
@@ -418,13 +419,17 @@
     {
         GRLNotification *not = [notificationArray objectAtIndex:rowIndex];
         NSString *identifier = [aTableColumn identifier];
+		NSDate *tempDate = nil;
         
         if([identifier isEqualToString:@"1"])
             return [not name];
-        else if([identifier isEqualToString:@"2"])
-            return [DateUtils stringFromDate:[[not event] firstTimeToCheck] withFormat:kGRLTimestampFormat];
+        else if([identifier isEqualToString:@"2"]) {
+			tempDate = [[not event] firstTimeToCheck];
+            return [tempDate stringWithFormat:kGRLTimestampFormat];
+		}
         else if([identifier isEqualToString:@"5"])
-            return [DateUtils stringFromDate:[not nextEventDate] withFormat:kGRLTimestampFormat];
+			tempDate = [not nextEventDate];
+            return [tempDate stringWithFormat:kGRLTimestampFormat];
         
         return nil;
     }

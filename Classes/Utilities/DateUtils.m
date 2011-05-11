@@ -7,12 +7,15 @@
 //  or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 //
 
+#import "NSDate+Helper.h"
 #import "DateUtils.h"
 
-#define kUnitFlags NSYearCalendarUnit | NSMonthCalendarUnit |  NSWeekdayCalendarUnit | NSDayCalendarUnit
-#define kCalendar [NSCalendar currentCalendar]
+#define kCalendar [[DateHelper sharedDateHelper] calendar]
 
 @implementation DateUtils
+
+/*
+ #define kUnitFlags NSYearCalendarUnit | NSMonthCalendarUnit |  NSWeekdayCalendarUnit | NSDayCalendarUnit
 
 + (NSUInteger) unitFlags {
 	return kUnitFlags; 
@@ -50,22 +53,26 @@
 	return [form dateFromString:dateString];
 	
 }
-
+*/
 + (NSString *)timeStampNow {
-	return [DateUtils stringFromDate:[NSDate date] withFormat:kGRLTimestampFormat];
+	return [[NSDate date] stringWithFormat:kGRLTimestampFormat];
+	//return [DateUtils stringFromDate:[NSDate date] withFormat:kGRLTimestampFormat];
 }
 
 + (NSString *)dateAsHeaderString:(NSDate *)aDate {	
-	return [DateUtils stringFromDate:aDate withFormat:kGRLDateHeaderFormat];
+	return [aDate stringWithFormat:kGRLDateHeaderFormat];
+//	return [DateUtils stringFromDate:aDate withFormat:kGRLDateHeaderFormat];
 }
 
 + (NSDate *)dateFromHeaderString:(NSString *)aString {
-	return [DateUtils dateFromString:aString withFormat:kGRLDateHeaderFormat];
+	return [NSDate dateFromString:aString withFormat:kGRLDateHeaderFormat];
+	//return [DateUtils dateFromString:aString withFormat:kGRLDateHeaderFormat];
 }
 
 + (NSInteger) dayOfWeekForDate:(NSDate *)aDate {
-	NSDateComponents *dateComponents = [kCalendar components:kUnitFlags fromDate:aDate];
-	NSInteger dayOfWeek = [dateComponents weekday] - 1;		// weekday needs to be offset by 1 to match
+	//NSDateComponents *dateComponents = [kCalendar components:kUnitFlags fromDate:aDate];
+	//NSInteger dayOfWeek = [dateComponents weekday] - 1;		// weekday needs to be offset by 1 to match
+	NSInteger dayOfWeek = [aDate weekday] - 1;
 	return dayOfWeek;
 }
 
@@ -119,7 +126,8 @@
 
 
 + (BOOL) isEarlier:(NSDate *)soonerDate thanDate:(NSDate *)laterDate {
-	return ([soonerDate compare:laterDate] != NSOrderedDescending); // sooner is before later
+	return [soonerDate isEarlierThanDate:laterDate];
+	//return ([soonerDate compare:laterDate] != NSOrderedDescending); // sooner is before later
 }
 
 @end

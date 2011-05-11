@@ -15,6 +15,6 @@
 - (NSString *)gradeForScore:(CGFloat)score;
 + (NSMutableArray *)defaultLetterGradeArray;
 
-@property (assign) NSArrayController *letterGradeController;
+@property (nonatomic, assign) NSArrayController *letterGradeController;
 
 @end

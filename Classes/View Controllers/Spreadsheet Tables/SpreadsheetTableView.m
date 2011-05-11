@@ -14,6 +14,10 @@
 @synthesize lastRow;
 @synthesize lastCol;
 
+- (void)dealloc {
+	[super dealloc];
+}
+
 - (void)mouseDown:(NSEvent *)event
 {
     [super mouseDown:[NSEvent mouseEventWithType:[event type] location:[event locationInWindow] modifierFlags:[event modifierFlags] timestamp:[event timestamp] windowNumber:[event windowNumber] context:[event context] eventNumber:[event eventNumber] clickCount:1 pressure:[event pressure]]];

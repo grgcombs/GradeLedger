@@ -19,7 +19,7 @@
 	IBOutlet DocumentPreferences *prefs;
 }
 
-- (void)resizeAssViewToFit;
+- (void)resizeAssViewToFit:(NSNotification *)notif;
 - (void)reloadTableData;
 - (IBAction)refreshCalendar:(id)sender;
 

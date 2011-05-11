@@ -86,23 +86,24 @@ enum kTabViewTabs {
 
 - (IBAction)scheduleChanged:(id)sender;
 
-
 - (void)documentEdited:(NSNotification *)notif;
 
-@property (retain) DocumentPreferences *preferences;
-@property (retain) GRLScoreDS *scoreDS;
-@property (retain) ScoreHeaderViewController *assHead;
-@property (retain) GRLAttendanceDS *attDS;
-@property (retain) GRLPrinter *printer;
-@property (retain) GRLAttendancePrinter *attPrinter;
-@property (retain) GRLExporter *exporter;
-@property (retain) GRLAttendanceExporter *attExporter;
-@property (retain) GRLPasswordProtect *passwordProtector;
-@property (retain) GRLNotificationManager *notManager;
-@property (retain) GRLStatController *statController;
-@property (retain) GRLPrintHeaderController *headerController;
-@property (retain) GRLStudentEmailer *studentEmailer;
-@property (retain) GRLZeroer *zeroer;
-@property (retain) GRLDatabase *data;
-@property (retain) NSWindow *docWindow;
+@property (nonatomic, assign) DocumentPreferences *preferences;
+@property (nonatomic, assign) GRLScoreDS *scoreDS;
+@property (nonatomic, assign) ScoreHeaderViewController *assHead;
+@property (nonatomic, assign) GRLAttendanceDS *attDS;
+@property (nonatomic, assign) GRLPrinter *printer;
+@property (nonatomic, assign) GRLAttendancePrinter *attPrinter;
+@property (nonatomic, assign) GRLExporter *exporter;
+@property (nonatomic, assign) GRLAttendanceExporter *attExporter;
+@property (nonatomic, assign) GRLPasswordProtect *passwordProtector;
+@property (nonatomic, assign) GRLNotificationManager *notManager;
+@property (nonatomic, assign) GRLStatController *statController;
+@property (nonatomic, assign) GRLPrintHeaderController *headerController;
+@property (nonatomic, assign) GRLStudentEmailer *studentEmailer;
+@property (nonatomic, assign) GRLZeroer *zeroer;
+@property (nonatomic, assign) GRLDatabase *data;
+@property (nonatomic, assign) NSWindow *docWindow;
+
+@property (nonatomic, readonly) IBOutlet NSManagedObjectContext *manObjContext;
 @end

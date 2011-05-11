@@ -79,11 +79,11 @@
 {
 	[self.nameTable deselectAll:nil];
 
-    [self resizeAssViewToFit];
+    [self resizeAssViewToFit:nil];
     [self.sheetTable reloadData];
 }
 
-- (void)resizeAssViewToFit
+- (void)resizeAssViewToFit:(NSNotification*)notif
 {
 	NSTableView *headerView = [self.headerTableDS headerTableView];
 	NSRect rect = [self.sheetTable frame];
@@ -151,7 +151,7 @@
 	[self.headerTableDS.headerTableView setNeedsDisplay:YES];
 	[self.sheetTable setNeedsDisplay:YES];
     
-	[self resizeAssViewToFit];
+	[self resizeAssViewToFit:nil];
 	
 }
 

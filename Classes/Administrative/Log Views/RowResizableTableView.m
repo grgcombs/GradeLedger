@@ -93,8 +93,6 @@
 }
 
 
-@synthesize rowHeights;
-@synthesize rowOrigins;
 @synthesize gridCalculated;
 @synthesize respondsToWillDisplayCell;
 @end

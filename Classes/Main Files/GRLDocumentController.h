@@ -11,26 +11,22 @@
 {
     IBOutlet NSWindow *classList;
     IBOutlet NSTableView *classListTable;
-    
     IBOutlet NSButton *showClassListOnLaunch;
     IBOutlet NSButton *automaticallyAddNewClasses;
     
-    NSMutableArray *m_classes;
-    
+    NSMutableArray *m_courses;
     BOOL didFinishLaunching;
 }
 
 - (void)newClassCreated:(NSURL *)url;
-
 - (void)removeClass:(id)sender;
 - (void)addClass:(id)sender;
-
 - (void)openClass:(id)sender;
 
-@property (retain) NSWindow *classList;
-@property (retain) NSTableView *classListTable;
-@property (retain) NSButton *showClassListOnLaunch;
-@property (retain) NSButton *automaticallyAddNewClasses;
-@property (retain) NSMutableArray *m_classes;
-@property BOOL didFinishLaunching;
+@property (nonatomic, assign) NSWindow *classList;
+@property (nonatomic, assign) NSTableView *classListTable;
+@property (nonatomic, assign) NSButton *showClassListOnLaunch;
+@property (nonatomic, assign) NSButton *automaticallyAddNewClasses;
+@property (nonatomic, assign) NSMutableArray *courses;
+@property (nonatomic) BOOL didFinishLaunching;
 @end

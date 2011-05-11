@@ -20,14 +20,14 @@
 
 + (NSString *)timeStampNow;
 
+/*
+ + (NSCalendar *)calendar;
+ + (NSUInteger) unitFlags;
 + (NSString *)stringFromDate:(NSDate *)aDate withFormat:(NSString *)formStr;
 + (NSDate *)dateFromString:(NSString *)dateString withFormat:(NSString *)formStr;
-
+*/
 + (NSString *)dateAsHeaderString:(NSDate *)aDate;
 + (NSDate *)dateFromHeaderString:(NSString *)aString;
-
-+ (NSCalendar *)calendar;
-+ (NSUInteger) unitFlags;
 
 + (NSInteger) dayOfWeekForDate:(NSDate *)aDate;
 + (NSDate *)today;

@@ -18,10 +18,18 @@
 {
     if((self = [super init]))
     {
-        self.m_classes = [NSMutableArray array];
+        m_courses = [[[NSMutableArray alloc] init] retain];
+		didFinishLaunching = NO;
     }
     return self;
 }
+
+- (void)dealloc
+{
+    self.courses = nil;
+    [super dealloc];
+}
+
 
 - (id)openUntitledDocumentAndDisplay:(BOOL)displayDocument error:(NSError **)outError
 {
@@ -46,13 +54,19 @@
     
     [[classListTable tableColumnWithIdentifier:@"1"] setDataCell:cell];
     
+	NSMutableArray *tempCourses = nil;
     if([userDefaults objectForKey:@"classes"])
     {
-        self.m_classes = [[NSUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"classes"]] retain];
+        tempCourses = [NSUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"classes"]];
+		if (tempCourses) {
+			if (NO == [tempCourses isKindOfClass:[NSMutableArray class]]) { // maybe it's not mutable?
+				tempCourses = [NSMutableArray arrayWithArray:tempCourses];
+			}
+			self.courses = tempCourses;
+		}
     }
-	if (!self.m_classes) // for some reason we didn't get good data from our default preferences
-		self.m_classes = [NSMutableArray array];
-    if([userDefaults objectForKey:@"showClassListOnLaunch"])
+
+	if([userDefaults objectForKey:@"showClassListOnLaunch"])
         [showClassListOnLaunch setState:[[userDefaults objectForKey:@"showClassListOnLaunch"] integerValue]];
     if([userDefaults objectForKey:@"automaticallyAddNewClasses"])
         [automaticallyAddNewClasses setState:[[userDefaults objectForKey:@"automaticallyAddNewClasses"] integerValue]];
@@ -63,13 +77,13 @@
     BOOL openedOne = false;
     
     NSInteger i;
-    for(i = 0; i<[self.m_classes count]; i++)
+    for(i = 0; i<[self.courses count]; i++)
     {
-        NSDictionary *next = [self.m_classes objectAtIndex:i];
+        NSDictionary *next = [m_courses objectAtIndex:i];
         
         if([next objectForKey:@"url"] == nil)
         {
-            [self.m_classes removeObjectAtIndex:i];
+            [m_courses removeObjectAtIndex:i];
             i--;
         }
         else if([[next objectForKey:@"openOnLaunch"] integerValue] == 1)
@@ -87,23 +101,16 @@
 
 - (void)applicationWillTerminate:(NSNotification *)not
 {
-    [userDefaults setObject:[NSArchiver archivedDataWithRootObject:self.m_classes] forKey:@"classes"];
+    [userDefaults setObject:[NSArchiver archivedDataWithRootObject:m_courses] forKey:@"classes"];
     [userDefaults setObject:[NSNumber numberWithInteger:[showClassListOnLaunch state]] forKey:@"showClassListOnLaunch"];
     [userDefaults setObject:[NSNumber numberWithInteger:[automaticallyAddNewClasses state]] forKey:@"automaticallyAddNewClasses"];
-}
-
-- (void)dealloc
-{
-    self.m_classes = nil;
-    [super dealloc];
 }
 
 
 - (void)newClassCreated:(NSURL *)url
 {
-    NSDictionary *obj;
-    
-    for(obj in self.m_classes)
+    NSDictionary *obj = nil;
+    for(obj in self.courses)
     {
         NSURL *searchURL = [obj objectForKey:@"url"];
     
@@ -117,14 +124,15 @@
         [dict setObject:url forKey:@"url"];
         [dict setObject:[NSNumber numberWithInt:0] forKey:@"openOnLaunch"];
     
-        [self.m_classes addObject:dict];
-        [classListTable reloadData];
+        [self.courses addObject:dict];
     }
+	[classListTable reloadData];
 }
 - (void)addClass:(id)sender
 {	
-	for (NSURL *classURL in [self URLsFromRunningOpenPanel])
+	for (NSURL *classURL in [self URLsFromRunningOpenPanel]) {
 		[self newClassCreated:classURL];	
+	}
 }
 
 - (id)openDocumentWithContentsOfURL:(NSURL *)absoluteURL display:(BOOL)displayDocument error:(NSError **)outError
@@ -143,28 +151,32 @@
 {
     //remove the selected class from the list (if any)
     NSInteger index = [classListTable selectedRow];
-    
-    if(index < 0 || index >= [self.m_classes count])
-        return;
-        
-    [self.m_classes removeObjectAtIndex:index];
+    if([self.courses count] > index) {
+		[self.courses removeObjectAtIndex:index];
+	}
     [classListTable reloadData];
 }
 
 
 - (void)openClass:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[[self.m_classes objectAtIndex:[classListTable selectedRow]] objectForKey:@"url"]];
+	NSInteger classIndex = [classListTable selectedRow];
+	if ([self.courses count] > classIndex) {
+		NSMutableDictionary *course = [self.courses objectAtIndex:classIndex];
+		if (course && [course objectForKey:@"url"]) {
+			[[NSWorkspace sharedWorkspace] openURL:[course objectForKey:@"url"]];
+		}
+	}
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [self.m_classes count];
+    return [self.courses count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
-    NSDictionary *dict = [self.m_classes objectAtIndex:row];
+    NSDictionary *dict = [self.courses objectAtIndex:row];
 
     if([[column identifier] isEqualToString:@"2"])
         return [[[[dict objectForKey:@"url"] path] lastPathComponent] stringByDeletingPathExtension];
@@ -181,28 +193,36 @@
 {
     if([[aTableColumn identifier] isEqualToString:@"1"])
     {
-        [aCell setState:[[[self.m_classes objectAtIndex:rowIndex] objectForKey:@"openOnLaunch"] integerValue]];
-        
-        [aCell setAction:@selector(toggleOpening:)];
-        [aCell setTarget:self];
+		if ([self.courses count] > rowIndex) {
+			NSMutableDictionary *course = [self.courses objectAtIndex:rowIndex];
+			if (course && [course objectForKey:@"openOnLaunch"]) {
+				NSInteger checkState = [[course objectForKey:@"openOnLaunch"] integerValue];
+				[aCell setState:checkState];
+			}
+			[aCell setAction:@selector(toggleOpening:)];
+			[aCell setTarget:self];
+		}
     }
 }
 
 - (void)toggleOpening:(id)sender
 {
     NSInteger index = [classListTable selectedRow];
-    NSMutableDictionary *dict = [self.m_classes objectAtIndex:index];
-    NSNumber *num = [dict objectForKey:@"openOnLaunch"];
-    
-    [dict setObject:[NSNumber numberWithInteger:![num integerValue]] forKey:@"openOnLaunch"];
+	if ([self.courses count] > index) {
+		NSMutableDictionary *dict = [self.courses objectAtIndex:index];
+		NSInteger checkState = [[dict objectForKey:@"openOnLaunch"] integerValue];
+		NSNumber *toggleInt = [NSNumber numberWithInteger:!checkState];
+		[dict setObject:toggleInt forKey:@"openOnLaunch"];
+	}
 }
 
 - (BOOL)tableView:(NSTableView *)tableView writeRows:(NSArray*)rows toPasteboard:(NSPasteboard*)pboard
 {
     NSMutableArray *attributes = [NSMutableArray arrayWithCapacity:[rows count]];
     
-    for(NSNumber *nextRow in rows)
+    for(NSNumber *nextRow in rows) {
         [attributes addObject:nextRow];
+	}
         
     [pboard declareTypes:[NSArray arrayWithObjects:@"GRLClassAliases",nil] owner:self];
     [pboard setData:[NSKeyedArchiver archivedDataWithRootObject:attributes] forType:@"GRLClassAliases"];
@@ -215,29 +235,33 @@
     return NSDragOperationMove;
 }
 
-- (BOOL)tableView:(NSTableView*)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
+- (BOOL)tableView:(NSTableView*)tableView acceptDrop:(id <NSDraggingInfo>)info 
+									   row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
-    if(row < 0)
+    if(row < 0) {
         return NO;
+	}
 
     NSPasteboard *board = [info draggingPasteboard];
     
     NSArray *attributes = [NSKeyedUnarchiver unarchiveObjectWithData:[board dataForType:@"GRLClassAliases"]];
-    
     NSMutableArray *atts = [NSMutableArray array];
     
+	// What is the point of this nonsense? What is this actually *doing*?
     id idNum;
     for(idNum in attributes)
     {
-        [atts addObject:[self.m_classes objectAtIndex:[idNum integerValue]]];
-        [self.m_classes replaceObjectAtIndex:[idNum integerValue] withObject:[NSNull null]];
+        [atts addObject:[self.courses objectAtIndex:[idNum integerValue]]];
+        [self.courses replaceObjectAtIndex:[idNum integerValue] withObject:[NSNull null]];
     }
     
-    for(idNum in [atts reverseObjectEnumerator])
-        [self.m_classes insertObject:idNum atIndex:row];
+    for(idNum in [atts reverseObjectEnumerator]) {
+        [self.courses insertObject:idNum atIndex:row];
+	}
     
-    for(idNum in [atts reverseObjectEnumerator])
-        [self.m_classes removeObject:[NSNull null]];
+    for(idNum in [atts reverseObjectEnumerator]) {
+        [self.courses removeObject:[NSNull null]];
+	}
     
     [tableView reloadData];
     
@@ -248,6 +272,6 @@
 @synthesize classListTable;
 @synthesize showClassListOnLaunch;
 @synthesize automaticallyAddNewClasses;
-@synthesize m_classes;
+@synthesize courses = m_courses;
 @synthesize didFinishLaunching;
 @end
