@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3716404D13774D610018A23A /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3716404B13774D610018A23A /* JSONKit.h */; };
-		3716404E13774D610018A23A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3716404C13774D610018A23A /* JSONKit.m */; };
+		37536D58137A749A002C9C4B /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 37536D3D137A749A002C9C4B /* JSONKit.h */; };
+		37536D59137A749A002C9C4B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 37536D3E137A749A002C9C4B /* JSONKit.m */; };
 		37819570137A286B004B852E /* User's Guide.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3781956F137A286B004B852E /* User's Guide.rtf */; };
 		37819573137A2907004B852E /* Read Me.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 37819571137A2907004B852E /* Read Me.rtf */; };
 		378636991379D50800427C1B /* RowResizableOutlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 378636141379D50800427C1B /* RowResizableOutlineView.h */; };
@@ -243,8 +243,8 @@
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		3716404B13774D610018A23A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		3716404C13774D610018A23A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		37536D3D137A749A002C9C4B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		37536D3E137A749A002C9C4B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		3781956F137A286B004B852E /* User's Guide.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "User's Guide.rtf"; path = "English.lproj/User's Guide.rtf"; sourceTree = "<group>"; };
 		37819572137A2907004B852E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = "English.lproj/Read Me.rtf"; sourceTree = "<group>"; };
 		378636141379D50800427C1B /* RowResizableOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowResizableOutlineView.h; sourceTree = "<group>"; };
@@ -483,8 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				378636111379D50800427C1B /* Classes */,
-				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				378637131379D58500427C1B /* Data */,
+				37536D15137A749A002C9C4B /* Vendor */,
 				378637D71379D65100427C1B /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
@@ -492,32 +492,31 @@
 			name = "Perfect Score";
 			sourceTree = "<group>";
 		};
-		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				3716404A13774D610018A23A /* JSONKit */,
-				378A15DB11568A4D00D57443 /* Mail.app */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				378A15DB11568A4D00D57443 /* Mail.app */,
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3716404A13774D610018A23A /* JSONKit */ = {
+		37536D15137A749A002C9C4B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3716404B13774D610018A23A /* JSONKit.h */,
-				3716404C13774D610018A23A /* JSONKit.m */,
+				37536D16137A749A002C9C4B /* JSONKit */,
 			);
-			name = JSONKit;
-			path = ../GitHub/RestKit/Vendor/JSONKit;
-			sourceTree = SOURCE_ROOT;
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		37536D16137A749A002C9C4B /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				37536D3D137A749A002C9C4B /* JSONKit.h */,
+				37536D3E137A749A002C9C4B /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
 		};
 		378636111379D50800427C1B /* Classes */ = {
 			isa = PBXGroup;
@@ -871,7 +870,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3716404D13774D610018A23A /* JSONKit.h in Headers */,
 				378636991379D50800427C1B /* RowResizableOutlineView.h in Headers */,
 				3786369B1379D50800427C1B /* RowResizableTableView.h in Headers */,
 				3786369D1379D50800427C1B /* RowResizableViewImplementation.h in Headers */,
@@ -933,6 +931,7 @@
 				3786370F1379D50800427C1B /* SpreadsheetTableView.h in Headers */,
 				378637111379D50800427C1B /* VerticalTextCell.h in Headers */,
 				37D8BCBF1379EF9E00C5C48E /* GRLScrollView.h in Headers */,
+				37536D58137A749A002C9C4B /* JSONKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,7 +1097,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				378A15E111568A9500D57443 /* Mail.app in Sources */,
-				3716404E13774D610018A23A /* JSONKit.m in Sources */,
 				3786369A1379D50800427C1B /* RowResizableOutlineView.m in Sources */,
 				3786369C1379D50800427C1B /* RowResizableTableView.m in Sources */,
 				378636A11379D50800427C1B /* GRLHelpManager.m in Sources */,
@@ -1158,6 +1156,7 @@
 				378637121379D50800427C1B /* VerticalTextCell.m in Sources */,
 				3786371C1379D58500427C1B /* DocumentModel.xcdatamodeld in Sources */,
 				37D8BCC11379F01E00C5C48E /* GRLNameTableView.m in Sources */,
+				37536D59137A749A002C9C4B /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

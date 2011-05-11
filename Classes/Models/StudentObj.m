@@ -424,7 +424,7 @@
 	 */
 	// any extra credit assignments happen here ... 
 	
-#warning this doesn't work anymore....
+	//#warning this failed for no apparent reason, this is here as a reminder of that  ....
 	//NSSet *extraCreditSet = [NSSet set];
 	NSSet *extraCreditSet = [[self managedObjectContext] fetchObjectsForEntityName:@"CategoryObj" 
 																		withPredicate:@"SELF.treatment BEGINSWITH[c] 'Extra'"];
@@ -464,9 +464,8 @@
     CGFloat accumulatedPercent = 0.0;    
     CGFloat sc;
 	
+	//#warning this failed for no apparent reason, this is here as a reminder of that  ....
 	//NSSet *regularSet = [[self managedObjectContext] fetchObjectsForEntityName:@"CategoryObj"];
-
-#warning this doesn't work anymore....
 
 	NSSet *regularSet = [[self managedObjectContext] fetchObjectsForEntityName:@"CategoryObj" 
 																	withPredicate:@"NOT (SELF.treatment BEGINSWITH[c] 'Extra')"];
