@@ -151,8 +151,8 @@
 {
     //remove the selected class from the list (if any)
     NSInteger index = [classListTable selectedRow];
-    if([self.courses count] > index) {
-		[self.courses removeObjectAtIndex:index];
+    if(self.courses && [m_courses count] > index) {
+		[m_courses removeObjectAtIndex:index];
 	}
     [classListTable reloadData];
 }
@@ -161,8 +161,8 @@
 - (void)openClass:(id)sender
 {
 	NSInteger classIndex = [classListTable selectedRow];
-	if ([self.courses count] > classIndex) {
-		NSMutableDictionary *course = [self.courses objectAtIndex:classIndex];
+	if (self.courses && [m_courses count] > classIndex) {
+		NSMutableDictionary *course = [m_courses objectAtIndex:classIndex];
 		if (course && [course objectForKey:@"url"]) {
 			[[NSWorkspace sharedWorkspace] openURL:[course objectForKey:@"url"]];
 		}
@@ -171,17 +171,21 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [self.courses count];
+	if (self.courses)
+		return [m_courses count];
+	return 0;
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)column row:(NSInteger)row
 {
-    NSDictionary *dict = [self.courses objectAtIndex:row];
+	if([[column identifier] isEqualToString:@"2"]) {
+		if (self.courses && [m_courses count]) {
+			NSDictionary *dict = [m_courses objectAtIndex:row];
+			return [[[[dict objectForKey:@"url"] path] lastPathComponent] stringByDeletingPathExtension];
+		}
+	}
 
-    if([[column identifier] isEqualToString:@"2"])
-        return [[[[dict objectForKey:@"url"] path] lastPathComponent] stringByDeletingPathExtension];
-    else
-        return nil;
+	return nil;
 }
 
 - (BOOL)tableView:(NSTableView *)tableView shouldEditTableColumn:(NSTableColumn *)column row:(NSInteger)row
@@ -193,8 +197,8 @@
 {
     if([[aTableColumn identifier] isEqualToString:@"1"])
     {
-		if ([self.courses count] > rowIndex) {
-			NSMutableDictionary *course = [self.courses objectAtIndex:rowIndex];
+		if (self.courses && [m_courses count] > rowIndex) {
+			NSMutableDictionary *course = [m_courses objectAtIndex:rowIndex];
 			if (course && [course objectForKey:@"openOnLaunch"]) {
 				NSInteger checkState = [[course objectForKey:@"openOnLaunch"] integerValue];
 				[aCell setState:checkState];
@@ -208,8 +212,8 @@
 - (void)toggleOpening:(id)sender
 {
     NSInteger index = [classListTable selectedRow];
-	if ([self.courses count] > index) {
-		NSMutableDictionary *dict = [self.courses objectAtIndex:index];
+	if (self.courses && [m_courses count] > index) {
+		NSMutableDictionary *dict = [m_courses objectAtIndex:index];
 		NSInteger checkState = [[dict objectForKey:@"openOnLaunch"] integerValue];
 		NSNumber *toggleInt = [NSNumber numberWithInteger:!checkState];
 		[dict setObject:toggleInt forKey:@"openOnLaunch"];
@@ -238,33 +242,35 @@
 - (BOOL)tableView:(NSTableView*)tableView acceptDrop:(id <NSDraggingInfo>)info 
 									   row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
-    if(row < 0) {
+    if(row < 0 || !self.courses) {
         return NO;
 	}
 
     NSPasteboard *board = [info draggingPasteboard];
     
     NSArray *attributes = [NSKeyedUnarchiver unarchiveObjectWithData:[board dataForType:@"GRLClassAliases"]];
-    NSMutableArray *atts = [NSMutableArray array];
+    NSMutableArray *atts = [[NSMutableArray alloc] init];
     
 	// What is the point of this nonsense? What is this actually *doing*?
-    id idNum;
+    id idNum = nil;
     for(idNum in attributes)
     {
-        [atts addObject:[self.courses objectAtIndex:[idNum integerValue]]];
-        [self.courses replaceObjectAtIndex:[idNum integerValue] withObject:[NSNull null]];
+        [atts addObject:[m_courses objectAtIndex:[idNum integerValue]]];
+        [m_courses replaceObjectAtIndex:[idNum integerValue] withObject:[NSNull null]];
     }
     
     for(idNum in [atts reverseObjectEnumerator]) {
-        [self.courses insertObject:idNum atIndex:row];
+        [m_courses insertObject:idNum atIndex:row];
 	}
     
     for(idNum in [atts reverseObjectEnumerator]) {
-        [self.courses removeObject:[NSNull null]];
+        [m_courses removeObject:[NSNull null]];
 	}
     
     [tableView reloadData];
     
+	[atts release];
+	
     return YES;
 }
 

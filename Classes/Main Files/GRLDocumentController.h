@@ -27,6 +27,6 @@
 @property (nonatomic, assign) NSTableView *classListTable;
 @property (nonatomic, assign) NSButton *showClassListOnLaunch;
 @property (nonatomic, assign) NSButton *automaticallyAddNewClasses;
-@property (nonatomic, assign) NSMutableArray *courses;
+@property (nonatomic, retain) NSMutableArray *courses;
 @property (nonatomic) BOOL didFinishLaunching;
 @end
