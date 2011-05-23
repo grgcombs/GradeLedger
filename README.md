@@ -36,3 +36,11 @@ License
 [Under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 ![Creative Commons License Badge](http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png "Creative Commons Attribution-NonCommercial-ShareAlike")
+
+Screenshots
+=========================
+![Student Grades](https://github.com/grgcombs/GradeLedger/raw/master/Screenshots/StudentGrades.png "Student Grades")
+
+![Attendance](https://github.com/grgcombs/GradeLedger/raw/master/Screenshots/Attendance.png "Attendance")
+
+![Grade Scale](https://github.com/grgcombs/GradeLedger/raw/master/Screenshots/GradeScale.png "Grade Scale")
