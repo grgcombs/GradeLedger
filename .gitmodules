@@ -1,3 +1,6 @@
 [submodule "Vendor/JSONKit"]
 	path = Vendor/JSONKit
 	url = git://github.com/johnezang/JSONKit.git
+[submodule "Classes/Utilities/LikeThoughtKit"]
+	path = Classes/Utilities/LikeThoughtKit
+	url = git://github.com/jacobx/thoughtkit.git
